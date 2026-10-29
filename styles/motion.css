@@ -1,0 +1,90 @@
+/**
+ * Meridian motion primitives — CSS only, respects prefers-reduced-motion.
+ */
+
+.cm-reveal {
+  animation: cm-reveal-up var(--cm-duration-slow, 420ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: var(--cm-delay, 0ms);
+}
+
+.cm-reveal--left {
+  animation-name: cm-reveal-left;
+}
+
+.cm-stagger > .cm-stagger__item {
+  animation: cm-reveal-up var(--cm-duration-slow, 420ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  animation-delay: calc(var(--cm-stagger-step, 70ms) * var(--cm-i, 0));
+}
+
+.cm-count {
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-card-hover,
+.admin-card,
+.sp-stat-card,
+.sp-item,
+.sp-panel {
+  transition:
+    transform var(--cm-duration, 220ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow var(--cm-duration, 220ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color var(--cm-duration, 220ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.cm-card-hover:hover,
+[data-admin-panel='true'] .admin-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--cm-color-primary, #4f46e5) 28%, var(--cm-color-border, #e2e8f0));
+}
+
+@keyframes cm-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cm-reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cm-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.cm-skeleton,
+.animate-pulse {
+  animation: cm-skeleton-pulse 1.2s var(--cm-ease, ease) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-reveal,
+  .cm-reveal--left,
+  .cm-stagger > .cm-stagger__item,
+  .cm-skeleton,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .cm-card-hover:hover,
+  [data-admin-panel='true'] .admin-card:hover {
+    transform: none;
+  }
+}

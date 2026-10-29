@@ -1,0 +1,193 @@
+{
+  "jsonColumns": {
+    "about_sections": [
+      "feature_list"
+    ],
+    "activity_logs": [
+      "details"
+    ],
+    "assessment_answers": [
+      "selected_option_ids"
+    ],
+    "assessment_attempts": [
+      "question_order",
+      "option_orders"
+    ],
+    "assessment_passages": [
+      "media_urls"
+    ],
+    "assessment_proctor_events": [
+      "meta"
+    ],
+    "assessment_questions": [
+      "options",
+      "correct_option_ids",
+      "media_urls"
+    ],
+    "centers": [
+      "phone"
+    ],
+    "center_seo_settings": [
+      "schema_markup"
+    ],
+    "content_versions": [
+      "content_data"
+    ],
+    "course_base_fees": [
+      "installment_due_rules",
+      "payment_rules"
+    ],
+    "course_batch_base_fees": [
+      "installment_due_rules",
+      "payment_rules"
+    ],
+    "course_batch_center_fees": [
+      "installment_due_rules",
+      "additional_discounts"
+    ],
+    "course_center_fees": [
+      "installment_due_rules",
+      "additional_discounts"
+    ],
+    "course_masters": [
+      "highlights",
+      "features",
+      "learning_outcomes",
+      "eligibility_criteria",
+      "installment_config"
+    ],
+    "course_master_batches": [
+      "installment_config"
+    ],
+    "custom_sections": [
+      "config"
+    ],
+    "email_templates": [
+      "variables"
+    ],
+    "employees": [
+      "documents"
+    ],
+    "image_library": [
+      "tags"
+    ],
+    "student_fee_payments": [
+      "fee_snapshot",
+      "gateway_response"
+    ],
+    "website_about_sections": [
+      "feature_list",
+      "philosophy_feature_list"
+    ]
+  },
+  "autoIncrement": {
+    "about_sections": "id",
+    "activity_logs": "id",
+    "admin_login_attempts": "id",
+    "admin_roles": "id",
+    "admin_sessions": "id",
+    "alerts": "id",
+    "analytics_tracking": "id",
+    "assessments": "id",
+    "assessment_answers": "id",
+    "assessment_attempts": "id",
+    "assessment_passages": "id",
+    "assessment_proctor_events": "id",
+    "assessment_questions": "id",
+    "assessment_sections": "id",
+    "attendance_records": "id",
+    "batch_seat_limits": "id",
+    "batch_transfers": "id",
+    "blog_comments": "id",
+    "blog_posts": "id",
+    "centers": "id",
+    "center_admins": "id",
+    "center_seo_settings": "id",
+    "contact_page_content": "id",
+    "contact_submissions": "id",
+    "content_versions": "id",
+    "courses": "id",
+    "course_base_fees": "id",
+    "course_batches": "id",
+    "course_batch_base_fees": "id",
+    "course_batch_center_fees": "id",
+    "course_batch_enrollments": "id",
+    "course_categories": "id",
+    "course_center_assignments": "id",
+    "course_center_fees": "id",
+    "course_fee_discounts": "id",
+    "course_masters": "id",
+    "course_master_batches": "id",
+    "course_master_faculty": "id",
+    "course_master_faqs": "id",
+    "cta_sliders": "id",
+    "custom_sections": "id",
+    "email_templates": "id",
+    "employees": "id",
+    "enrollment_settings": "id",
+    "enrollment_waitlist": "id",
+    "expenses": "id",
+    "faqs": "id",
+    "footer_menu_items": "id",
+    "gallery_images": "id",
+    "global_settings": "id",
+    "header_menu_items": "id",
+    "hero_slides": "id",
+    "image_library": "id",
+    "leadership": "id",
+    "nearby_centers": "id",
+    "news_items": "id",
+    "notifications": "id",
+    "notification_queue": "id",
+    "password_reset_tokens": "id",
+    "payment_refunds": "id",
+    "permissions": "id",
+    "referral_codes": "id",
+    "result_images": "id",
+    "roles": "id",
+    "role_permissions": "id",
+    "scholarship_results": "id",
+    "scholarship_tiers": "id",
+    "section_configs": "id",
+    "senior_faculty": "id",
+    "students": "id",
+    "student_course_materials": "id",
+    "student_custom_discounts": "id",
+    "student_email_verification_tokens": "id",
+    "student_enrollments": "id",
+    "student_fee_payments": "id",
+    "student_guardians": "id",
+    "student_installments": "id",
+    "student_login_attempts": "id",
+    "student_otp_codes": "id",
+    "student_payment_installments": "id",
+    "student_sessions": "id",
+    "student_stories": "id",
+    "super_admins": "id",
+    "super_admin_permissions": "id",
+    "super_admin_roles": "id",
+    "super_admin_role_permissions": "id",
+    "super_admin_user_roles": "id",
+    "text_testimonials": "id",
+    "vacancies": "id",
+    "video_testimonials": "id",
+    "website_about_sections": "id",
+    "website_blog_posts": "id",
+    "website_courses": "id",
+    "website_faqs": "id",
+    "website_featured_centers": "id",
+    "website_footer_menu_items": "id",
+    "website_gallery_images": "id",
+    "website_header_menu_items": "id",
+    "website_hero_slides": "id",
+    "website_leadership": "id",
+    "website_main_nav_items": "id",
+    "website_news_items": "id",
+    "website_result_images": "id",
+    "website_section_configs": "id",
+    "website_senior_faculty": "id",
+    "website_student_stories": "id",
+    "website_text_testimonials": "id",
+    "website_video_testimonials": "id"
+  }
+}

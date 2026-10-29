@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="120" viewBox="0 0 290 120">
+  
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="60" r="30" fill="url(#g)"/>
+  <ellipse cx="50" cy="60" rx="39.6" ry="13.8" fill="none" stroke="#FFFFFF"
+    stroke-width="3.3" transform="rotate(-24 50 60)" opacity="0.95"/>
+  <path d="M37.4 61.5 q12.6 -15 25.2 0" fill="none"
+    stroke="#FFFFFF" stroke-width="3.5999999999999996" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="83.6" cy="44.4" r="5.1000000000000005" fill="#F59E0B"/>
+  <text x="98" y="66" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#0F172A">Edu</tspan><tspan fill="#4F46E5">Sphere</tspan>
+  </text>
+  <text x="100" y="90" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="6.2" fill="#64748B">ACADEMY</text>
+</svg>

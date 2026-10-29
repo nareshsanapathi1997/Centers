@@ -1,0 +1,214 @@
+/* Tailwind entry for admin, student, payment, and public website layouts. */
+@import '../styles/tokens.css';
+@import '../styles/motion.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cm-reveal {
+    animation: cm-reveal-up var(--cm-duration-slow, 420ms) var(--cm-ease, cubic-bezier(0.22, 1, 0.36, 1)) both;
+  }
+
+  .cm-focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--cm-color-surface, #fff), 0 0 0 4px var(--cm-color-ring);
+  }
+}
+
+@keyframes cm-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-reveal {
+    animation: none;
+  }
+}
+
+/* Kit primitives (breadcrumbs, switch) — scoped via CSS vars / admin panel */
+@layer components {
+  .cm-breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8125rem;
+    color: var(--cm-color-text-muted, #64748b);
+  }
+
+  .cm-breadcrumbs__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .cm-breadcrumbs__sep {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+    opacity: 0.55;
+  }
+
+  .cm-breadcrumbs__link {
+    color: var(--cm-color-primary, #4f46e5);
+    font-weight: 500;
+  }
+
+  .cm-breadcrumbs__link:hover {
+    text-decoration: underline !important;
+  }
+
+  .cm-breadcrumbs__current {
+    color: var(--cm-color-text, #0f172a);
+    font-weight: 600;
+  }
+
+  .admin-form-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .admin-form-switch__track {
+    position: relative;
+    width: 2.5rem;
+    height: 1.375rem;
+    border-radius: 999px;
+    border: 1px solid var(--cm-color-border, #e2e8f0);
+    background: var(--cm-color-surface-muted, #f1f5f9);
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .admin-form-switch__track.is-on {
+    background: var(--cm-color-primary, #4f46e5);
+    border-color: var(--cm-color-primary, #4f46e5);
+  }
+
+  .admin-form-switch__track:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .admin-form-switch__thumb {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+    transition: transform 0.15s ease;
+  }
+
+  .admin-form-switch__track.is-on .admin-form-switch__thumb {
+    transform: translateX(1.125rem);
+  }
+
+  .admin-form-switch__label {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Remove underlines from all links */
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active {
+  text-decoration: none !important;
+}
+
+/* Ensure Next.js Link components also have no underline */
+a[href],
+Link {
+  text-decoration: none !important;
+}
+
+/* Competitive-exam assessment rich content (HTML tables, images, KaTeX) */
+.assessment-rich {
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-x: auto;
+}
+.assessment-rich p {
+  margin: 0 0 0.75rem;
+}
+.assessment-rich p:last-child {
+  margin-bottom: 0;
+}
+.assessment-rich ul,
+.assessment-rich ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+}
+.assessment-rich table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.925rem;
+  display: table;
+}
+.assessment-rich th,
+.assessment-rich td {
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.assessment-rich th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+html.dark .assessment-rich,
+html[data-theme='dark'] .assessment-rich {
+  color: #e2e8f0;
+}
+html.dark .assessment-rich th,
+html.dark .assessment-rich td,
+html[data-theme='dark'] .assessment-rich th,
+html[data-theme='dark'] .assessment-rich td {
+  border-color: #475569;
+}
+html.dark .assessment-rich th,
+html[data-theme='dark'] .assessment-rich th {
+  background: #1e293b;
+}
+.assessment-rich img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+}
+.assessment-rich .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0.75rem 0;
+}
+.assessment-rich--option p {
+  margin: 0;
+  display: inline;
+}
+
+

@@ -1,0 +1,41 @@
+.admin-panel-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.admin-panel-logo img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.admin-panel-logo--sm {
+  height: 28px;
+}
+
+.admin-panel-logo--md {
+  height: 36px;
+}
+
+.admin-panel-logo--lg {
+  height: 48px;
+}
+
+.admin-panel-logo img.admin-panel-logo__light {
+  display: block;
+}
+
+.admin-panel-logo img.admin-panel-logo__dark {
+  display: none;
+}
+
+.dark .admin-panel-logo img.admin-panel-logo__light {
+  display: none;
+}
+
+.dark .admin-panel-logo img.admin-panel-logo__dark {
+  display: block;
+}

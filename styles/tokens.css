@@ -1,0 +1,171 @@
+/**
+ * Shared design tokens ? EduSphere Indigo & Cool Slate design system.
+ * Consumed by public website, student portal, centre admin, and super admin.
+ */
+:root {
+  --cm-font-display: var(--font-roboto-condensed), 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+  --cm-font-sans: var(--font-source-sans), 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --cm-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --cm-radius-xs: 6px;
+  --cm-radius-sm: 8px;
+  --cm-radius-md: 12px;
+  --cm-radius-lg: 16px;
+  --cm-radius-xl: 24px;
+
+  --cm-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --cm-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --cm-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04);
+  --cm-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --cm-shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --cm-shadow-float: 0 20px 44px -8px rgba(15, 23, 42, 0.14), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+
+  /* Motion tokens */
+  --cm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cm-duration-fast: 150ms;
+  --cm-duration: 240ms;
+  --cm-duration-slow: 380ms;
+  --cm-stagger-step: 45ms;
+  --cm-delay: 0ms;
+  --cm-i: 0;
+
+  /* Core semantic color aliases (used across admin, super-admin, charts, cards, globals) */
+  --cm-color-primary: #4f46e5;
+  --cm-color-accent: #6366f1;
+  --cm-color-surface: #ffffff;
+  --cm-color-surface-muted: #f1f5f9;
+  --cm-color-border: #e2e8f0;
+  --cm-color-ring: rgba(79, 70, 229, 0.24);
+  --cm-color-text: #0f172a;
+  --cm-color-text-muted: #475569;
+
+  --primary-color: #4f46e5;
+  --bs-primary: #4f46e5;
+
+  /* Public website tokens ? Indigo & Cool Slate */
+  --cm-public-bg: #f8fafc;
+  --cm-public-surface: #ffffff;
+  --cm-public-surface-warm: #f1f5f9;
+  --cm-public-ink: #0f172a;
+  --cm-public-ink-soft: #1e293b;
+  --cm-public-text: #0f172a;
+  --cm-public-muted: #475569;
+  --cm-public-border: #e2e8f0;
+  --cm-public-primary: #4f46e5;
+  --cm-public-primary-strong: #4338ca;
+  --cm-public-secondary: #6366f1;
+  --cm-public-accent: #4f46e5;
+  --cm-public-accent-soft: #eef2ff;
+  --cm-public-navy: #0f172a;
+  --cm-public-gold: #4f46e5;
+  --cm-public-amber: #4f46e5;
+  --cm-public-amber-strong: #4338ca;
+
+  /* Student portal tokens */
+  --cm-student-bg: #f8fafc;
+  --cm-student-surface: #ffffff;
+  --cm-student-surface-muted: #f1f5f9;
+  --cm-student-text: #0f172a;
+  --cm-student-text-muted: #475569;
+  --cm-student-border: #e2e8f0;
+  --cm-student-primary: #4f46e5;
+  --cm-student-primary-strong: #4338ca;
+  --cm-student-primary-soft: #eef2ff;
+  --cm-student-navy: #0f172a;
+  --cm-student-navy-soft: #1e293b;
+
+  /* Admin & Super Admin tokens */
+  --cm-admin-bg: #f8fafc;
+  --cm-admin-surface: #ffffff;
+  --cm-admin-surface-muted: #f1f5f9;
+  --cm-admin-text: #0f172a;
+  --cm-admin-text-muted: #475569;
+  --cm-admin-text-subtle: #64748b;
+  --cm-admin-border: #e2e8f0;
+  --cm-admin-border-strong: #cbd5e1;
+  --cm-admin-primary: #4f46e5;
+  --cm-admin-primary-strong: #4338ca;
+  --cm-admin-primary-soft: #eef2ff;
+  --cm-admin-accent: #6366f1;
+  --cm-admin-accent-soft: #e0e7ff;
+  --cm-admin-ring: rgba(79, 70, 229, 0.24);
+
+  /* Semantic status tokens */
+  --cm-success: #10b981;
+  --cm-success-strong: #047857;
+  --cm-success-soft: #ecfdf5;
+  --cm-warning: #f59e0b;
+  --cm-warning-strong: #b45309;
+  --cm-warning-soft: #fffbeb;
+  --cm-danger: #ef4444;
+  --cm-danger-strong: #b91c1c;
+  --cm-danger-soft: #fef2f2;
+  --cm-info: #0284c7;
+  --cm-info-soft: #f0f9ff;
+
+  /* Section graphic tokens */
+  --cm-section-accent: #4f46e5;
+  --cm-section-accent-soft: #eef2ff;
+  --cm-section-highlight: #6366f1;
+}
+
+html.dark,
+html.theme-dark,
+[data-theme='dark'],
+body.dark-theme {
+  --cm-color-primary: #818cf8;
+  --cm-color-accent: #a5b4fc;
+  --cm-color-surface: #111827;
+  --cm-color-surface-muted: #1e293b;
+  --cm-color-border: #1e293b;
+  --cm-color-ring: rgba(129, 140, 248, 0.28);
+  --cm-color-text: #f8fafc;
+  --cm-color-text-muted: #94a3b8;
+
+  --cm-public-bg: #0b0f19;
+  --cm-public-surface: #111827;
+  --cm-public-surface-warm: #1e293b;
+  --cm-public-ink: #f8fafc;
+  --cm-public-ink-soft: #e2e8f0;
+  --cm-public-text: #f8fafc;
+  --cm-public-muted: #94a3b8;
+  --cm-public-border: #1e293b;
+  --cm-public-primary: #6366f1;
+  --cm-public-primary-strong: #818cf8;
+  --cm-public-secondary: #818cf8;
+  --cm-public-accent: #818cf8;
+  --cm-public-accent-soft: rgba(99, 102, 241, 0.16);
+  --cm-public-navy: #0b0f19;
+  --cm-public-gold: #818cf8;
+  --cm-public-amber: #818cf8;
+  --cm-public-amber-strong: #a5b4fc;
+
+  --cm-student-bg: #0b0f19;
+  --cm-student-surface: #111827;
+  --cm-student-surface-muted: #1e293b;
+  --cm-student-text: #f8fafc;
+  --cm-student-text-muted: #94a3b8;
+  --cm-student-border: #1e293b;
+  --cm-student-primary: #6366f1;
+  --cm-student-primary-strong: #818cf8;
+  --cm-student-primary-soft: rgba(99, 102, 241, 0.16);
+
+  --cm-admin-bg: #0b0f19;
+  --cm-admin-surface: #111827;
+  --cm-admin-surface-muted: #1e293b;
+  --cm-admin-text: #f8fafc;
+  --cm-admin-text-muted: #94a3b8;
+  --cm-admin-text-subtle: #64748b;
+  --cm-admin-border: #1e293b;
+  --cm-admin-border-strong: #334155;
+  --cm-admin-primary: #6366f1;
+  --cm-admin-primary-strong: #818cf8;
+  --cm-admin-primary-soft: rgba(99, 102, 241, 0.16);
+  --cm-admin-accent: #818cf8;
+  --cm-admin-accent-soft: rgba(129, 140, 248, 0.16);
+  --cm-admin-ring: rgba(129, 140, 248, 0.28);
+
+  --cm-success-strong: #34d399;
+  --cm-warning-strong: #fbbf24;
+  --cm-danger-strong: #f87171;
+}

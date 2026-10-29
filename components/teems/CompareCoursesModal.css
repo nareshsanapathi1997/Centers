@@ -1,0 +1,367 @@
+.teems-compare-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.teems-compare-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #5f60ee;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.teems-compare-open-btn-inline {
+  min-height: 44px;
+  height: 44px;
+  padding: 0 18px;
+}
+
+.teems-compare-open-btn:hover {
+  background: #5354d9;
+  color: #fff;
+}
+
+.teems-compare-open-btn i {
+  font-size: 16px;
+}
+
+.teems-compare-modal-dialog {
+  max-width: 760px;
+}
+
+.teems-compare-modal .modal-content {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.16);
+}
+
+.teems-compare-modal .modal-header {
+  border-bottom: 1px solid #eef2f7;
+  padding: 0.85rem 1.1rem;
+}
+
+.teems-compare-modal .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a2233;
+}
+
+.teems-compare-modal .modal-body {
+  padding: 1rem 1.1rem;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.teems-compare-modal .modal-footer {
+  border-top: 1px solid #eef2f7;
+  padding: 0.75rem 1.1rem;
+}
+
+.teems-compare-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #5f60ee;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.teems-compare-secondary-btn:hover {
+  background: #fad425;
+  color: #3a3a3a;
+}
+
+.teems-compare-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #5f60ee;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.teems-compare-primary-btn:hover:not(:disabled) {
+  background: #5354d9;
+  color: #fff;
+}
+
+.teems-compare-primary-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.teems-compare-course-item {
+  border: 1px solid #fefefe;
+  border-radius: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.teems-compare-course-item:hover {
+  background: #eeeeee;
+}
+
+.teems-compare-course-item.selected {
+  background: #e8e8ff;
+  border: 1px solid #5b5cdc;
+}
+
+.teems-compare-course-item.selected .teems-compare-check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #149d1c;
+  color: #fff;
+  font-size: 16px;
+}
+
+.teems-compare-course-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.teems-compare-course-title {
+  margin-bottom: 0;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.teems-compare-card {
+  box-shadow: rgba(99, 99, 99, 0.18) 0 1px 6px 0;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.teems-compare-card-head {
+  background: #5f60ee;
+  padding: 7px 10px;
+  color: #fff;
+}
+
+.teems-compare-card-head h6 {
+  color: #f0f0ff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.teems-compare-card-head small {
+  display: inline-block;
+  font-size: 10px;
+  background: #ffba36;
+  color: #414141;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.teems-compare-card .card-body {
+  padding: 0.65rem 0.75rem;
+}
+
+.teems-compare-card .card-body .card-title {
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.teems-compare-card ul {
+  margin: 0 !important;
+  padding-left: 0;
+  list-style: none;
+}
+
+.teems-compare-card ul li {
+  font-size: 11px;
+  border-bottom: 1px solid #d4d4e6;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  line-height: 1.35;
+}
+
+.teems-compare-card .card-footer {
+  padding: 0 0.75rem 0.65rem;
+}
+
+.teems-compare-card .card-footer hr {
+  margin: 0.35rem 0 0.5rem;
+}
+
+.teems-compare-card .teems-compare-price-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+
+.teems-compare-card .teems-compare-price-old {
+  color: #ce6262;
+  font-size: 13px;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.teems-compare-card .teems-compare-price-offer {
+  color: #244081;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.teems-compare-card .teems-compare-offer-text {
+  font-size: 11px;
+  color: #bb2a2c;
+  text-align: center;
+  margin: 0.25rem 0 0;
+}
+
+.teems-compare-card .teems-compare-gst-text {
+  font-size: 11px;
+  color: #198754;
+  text-align: center;
+  margin: 0.15rem 0 0;
+}
+
+.teems-compare-enroll-btn {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: #5f60ee;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid #5f60ee;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.teems-compare-enroll-btn:hover {
+  background: #fad425;
+  border-color: #fad425;
+  color: #3a3a3a;
+}
+
+.teems-compare-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.teems-compare-loading {
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.teems-compare-modal .alert {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  margin-bottom: 0.75rem;
+}
+
+.teems-compare-modal .form-label {
+  font-size: 0.8125rem;
+  margin-bottom: 0.35rem;
+}
+
+.teems-compare-modal .form-text {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 767.98px) {
+  .teems-compare-modal-dialog {
+    max-width: calc(100% - 1.5rem);
+    margin: 0.75rem auto;
+  }
+  .teems-compare-toolbar {
+    justify-content: stretch;
+  }
+
+  .teems-compare-open-btn {
+    width: 100%;
+  }
+
+  .teems-type-filter-compare-slot {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .teems-compare-open-btn-inline {
+    width: 100%;
+  }
+}
+
+.theme-dark .teems-compare-modal .modal-content,
+html[data-theme='dark'] .teems-compare-modal .modal-content,
+body.dark-theme .teems-compare-modal .modal-content {
+  background: #1b1f28;
+  color: #f8fafc;
+}
+
+.theme-dark .teems-compare-modal .modal-header,
+.theme-dark .teems-compare-modal .modal-footer,
+html[data-theme='dark'] .teems-compare-modal .modal-header,
+html[data-theme='dark'] .teems-compare-modal .modal-footer,
+body.dark-theme .teems-compare-modal .modal-header,
+body.dark-theme .teems-compare-modal .modal-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .teems-compare-modal .modal-title,
+html[data-theme='dark'] .teems-compare-modal .modal-title,
+body.dark-theme .teems-compare-modal .modal-title {
+  color: #f8fafc;
+}
+
+.theme-dark .teems-compare-course-item:hover,
+html[data-theme='dark'] .teems-compare-course-item:hover,
+body.dark-theme .teems-compare-course-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-dark .teems-compare-course-item.selected,
+html[data-theme='dark'] .teems-compare-course-item.selected,
+body.dark-theme .teems-compare-course-item.selected {
+  background: rgba(95, 96, 238, 0.18);
+  border-color: rgba(129, 140, 248, 0.45);
+}

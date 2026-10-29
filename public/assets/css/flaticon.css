@@ -1,0 +1,522 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../fonts/flaticon4ccc.ttf?fb77987780f91e7a7ccc5b7f62c17d7a") format("truetype"),
+url("../fonts/flaticon4ccc.woff?fb77987780f91e7a7ccc5b7f62c17d7a") format("woff"),
+url("../fonts/flaticon4ccc.woff2?fb77987780f91e7a7ccc5b7f62c17d7a") format("woff2"),
+url("../fonts/flaticon4ccc.eot?fb77987780f91e7a7ccc5b7f62c17d7a#iefix") format("embedded-opentype"),
+url("../fonts/flaticon4ccc.svg?fb77987780f91e7a7ccc5b7f62c17d7a#flaticon") format("svg");
+    font-display: swap;
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-play-button:before {
+    content: "\f101";
+}
+.flaticon-play-button-arrowhead:before {
+    content: "\f102";
+}
+.flaticon-quotation-mark:before {
+    content: "\f103";
+}
+.flaticon-minus-sign:before {
+    content: "\f104";
+}
+.flaticon-plus-positive-add-mathematical-symbol:before {
+    content: "\f105";
+}
+.flaticon-chat-comment-oval-speech-bubble-with-text-lines:before {
+    content: "\f106";
+}
+.flaticon-close-button:before {
+    content: "\f107";
+}
+.flaticon-share:before {
+    content: "\f108";
+}
+.flaticon-right-arrow:before {
+    content: "\f109";
+}
+.flaticon-phone-call:before {
+    content: "\f10a";
+}
+.flaticon-left-arrow:before {
+    content: "\f10b";
+}
+.flaticon-right-arrow-1:before {
+    content: "\f10c";
+}
+.flaticon-telephone:before {
+    content: "\f10d";
+}
+.flaticon-favorites:before {
+    content: "\f10e";
+}
+.flaticon-credit-card:before {
+    content: "\f10f";
+}
+.flaticon-secure-shield:before {
+    content: "\f110";
+}
+.flaticon-tick:before {
+    content: "\f111";
+}
+.flaticon-play:before {
+    content: "\f112";
+}
+.flaticon-care:before {
+    content: "\f113";
+}
+.flaticon-play-button-1:before {
+    content: "\f114";
+}
+.flaticon-call:before {
+    content: "\f115";
+}
+.flaticon-pin:before {
+    content: "\f116";
+}
+.flaticon-email:before {
+    content: "\f117";
+}
+.flaticon-email-1:before {
+    content: "\f118";
+}
+.flaticon-down-arrow:before {
+    content: "\f119";
+}
+.flaticon-done:before {
+    content: "\f11a";
+}
+.flaticon-shooting-star:before {
+    content: "\f11b";
+}
+.flaticon-up-arrow:before {
+    content: "\f11c";
+}
+.flaticon-down-arrow-1:before {
+    content: "\f11d";
+}
+.flaticon-customer:before {
+    content: "\f11e";
+}
+.flaticon-checked:before {
+    content: "\f11f";
+}
+.flaticon-next:before {
+    content: "\f120";
+}
+.flaticon-play-1:before {
+    content: "\f121";
+}
+.flaticon-email-2:before {
+    content: "\f122";
+}
+.flaticon-calendar:before {
+    content: "\f123";
+}
+.flaticon-professional:before {
+    content: "\f124";
+}
+.flaticon-send:before {
+    content: "\f125";
+}
+.flaticon-stethoscope:before {
+    content: "\f126";
+}
+.flaticon-support:before {
+    content: "\f127";
+}
+.flaticon-gastroenterologist:before {
+    content: "\f128";
+}
+.flaticon-left-arrow-1:before {
+    content: "\f129";
+}
+.flaticon-time:before {
+    content: "\f12a";
+}
+.flaticon-medical-history:before {
+    content: "\f12b";
+}
+.flaticon-brain:before {
+    content: "\f12c";
+}
+.flaticon-medicine:before {
+    content: "\f12d";
+}
+.flaticon-blood:before {
+    content: "\f12e";
+}
+.flaticon-tooth:before {
+    content: "\f12f";
+}
+.flaticon-heartbeat:before {
+    content: "\f130";
+}
+.flaticon-doctor:before {
+    content: "\f131";
+}
+.flaticon-planet-earth:before {
+    content: "\f132";
+}
+.flaticon-dental-care:before {
+    content: "\f133";
+}
+.flaticon-gynecology:before {
+    content: "\f134";
+}
+.flaticon-airplane:before {
+    content: "\f135";
+}
+.flaticon-linkedin:before {
+    content: "\f136";
+}
+.flaticon-user:before {
+    content: "\f137";
+}
+.flaticon-user-1:before {
+    content: "\f138";
+}
+.flaticon-debit-card:before {
+    content: "\f139";
+}
+.flaticon-file:before {
+    content: "\f13a";
+}
+.flaticon-crutches:before {
+    content: "\f13b";
+}
+.flaticon-quote:before {
+    content: "\f13c";
+}
+.flaticon-quote-1:before {
+    content: "\f13d";
+}
+.flaticon-shopping-cart:before {
+    content: "\f13e";
+}
+.flaticon-payment-method:before {
+    content: "\f13f";
+}
+.flaticon-exit:before {
+    content: "\f140";
+}
+.flaticon-surgery-room:before {
+    content: "\f141";
+}
+.flaticon-briefcase:before {
+    content: "\f142";
+}
+.flaticon-hot-stones:before {
+    content: "\f143";
+}
+.flaticon-dental-implant:before {
+    content: "\f144";
+}
+.flaticon-thinking:before {
+    content: "\f145";
+}
+.flaticon-price-tag:before {
+    content: "\f146";
+}
+.flaticon-laser:before {
+    content: "\f147";
+}
+.flaticon-mental-health:before {
+    content: "\f148";
+}
+.flaticon-check:before {
+    content: "\f149";
+}
+.flaticon-share-1:before {
+    content: "\f14a";
+}
+.flaticon-star:before {
+    content: "\f14b";
+}
+.flaticon-makeup:before {
+    content: "\f14c";
+}
+.flaticon-user-2:before {
+    content: "\f14d";
+}
+.flaticon-kidney:before {
+    content: "\f14e";
+}
+.flaticon-bubble-chat:before {
+    content: "\f14f";
+}
+.flaticon-envelope:before {
+    content: "\f150";
+}
+.flaticon-play-2:before {
+    content: "\f151";
+}
+.flaticon-facebook:before {
+    content: "\f152";
+}
+.flaticon-instagram:before {
+    content: "\f153";
+}
+.flaticon-linkedin-1:before {
+    content: "\f154";
+}
+.flaticon-twitter:before {
+    content: "\f155";
+}
+.flaticon-briefcase-1:before {
+    content: "\f156";
+}
+.flaticon-health-report:before {
+    content: "\f157";
+}
+.flaticon-health-insurance:before {
+    content: "\f158";
+}
+.flaticon-dentistry:before {
+    content: "\f159";
+}
+.flaticon-rhinoplasty:before {
+    content: "\f15a";
+}
+.flaticon-dentist:before {
+    content: "\f15b";
+}
+.flaticon-patient:before {
+    content: "\f15c";
+}
+.flaticon-healthcare:before {
+    content: "\f15d";
+}
+.flaticon-speech-bubble:before {
+    content: "\f15e";
+}
+.flaticon-laser-surgery:before {
+    content: "\f15f";
+}
+.flaticon-massage:before {
+    content: "\f160";
+}
+.flaticon-bell:before {
+    content: "\f161";
+}
+.flaticon-graph:before {
+    content: "\f162";
+}
+.flaticon-baby-room:before {
+    content: "\f163";
+}
+.flaticon-plane:before {
+    content: "\f164";
+}
+.flaticon-plastic-surgery:before {
+    content: "\f165";
+}
+.flaticon-globe:before {
+    content: "\f166";
+}
+.flaticon-clinic:before {
+    content: "\f167";
+}
+.flaticon-charity:before {
+    content: "\f168";
+}
+.flaticon-quote-2:before {
+    content: "\f169";
+}
+.flaticon-dry-eyes:before {
+    content: "\f16a";
+}
+.flaticon-calendar-1:before {
+    content: "\f16b";
+}
+.flaticon-dental-care-1:before {
+    content: "\f16c";
+}
+.flaticon-insurance:before {
+    content: "\f16d";
+}
+.flaticon-love:before {
+    content: "\f16e";
+}
+.flaticon-clinic-1:before {
+    content: "\f16f";
+}
+.flaticon-send-1:before {
+    content: "\f170";
+}
+.flaticon-remove:before {
+    content: "\f171";
+}
+.flaticon-sign-out:before {
+    content: "\f172";
+}
+.flaticon-search:before {
+    content: "\f173";
+}
+.flaticon-quality:before {
+    content: "\f174";
+}
+.flaticon-laser-1:before {
+    content: "\f175";
+}
+.flaticon-eye:before {
+    content: "\f176";
+}
+.flaticon-doctor-1:before {
+    content: "\f177";
+}
+.flaticon-map:before {
+    content: "\f178";
+}
+.flaticon-back:before {
+    content: "\f179";
+}
+.flaticon-next-1:before {
+    content: "\f17a";
+}
+.flaticon-tooth-brush:before {
+    content: "\f17b";
+}
+.flaticon-cancer:before {
+    content: "\f17c";
+}
+.flaticon-cosmetics:before {
+    content: "\f17d";
+}
+.flaticon-healthcare-1:before {
+    content: "\f17e";
+}
+.flaticon-diagnosis:before {
+    content: "\f17f";
+}
+.flaticon-people:before {
+    content: "\f180";
+}
+.flaticon-weight-loss:before {
+    content: "\f181";
+}
+.flaticon-up-right-arrow:before {
+    content: "\f182";
+}
+.flaticon-lungs:before {
+    content: "\f183";
+}
+.flaticon-chemistry:before {
+    content: "\f184";
+}
+.flaticon-driving-license:before {
+    content: "\f185";
+}
+.flaticon-surgeon:before {
+    content: "\f186";
+}
+.flaticon-healthcare-2:before {
+    content: "\f187";
+}
+.flaticon-quotes:before {
+    content: "\f188";
+}
+.flaticon-eyelids:before {
+    content: "\f189";
+}
+.flaticon-pain-in-joints:before {
+    content: "\f18a";
+}
+.flaticon-laser-2:before {
+    content: "\f18b";
+}
+.flaticon-fracture:before {
+    content: "\f18c";
+}
+.flaticon-heart:before {
+    content: "\f18d";
+}
+.flaticon-dental-checkup:before {
+    content: "\f18e";
+}
+.flaticon-cardiology:before {
+    content: "\f18f";
+}
+.flaticon-alice-in-wonderland-syndrome:before {
+    content: "\f190";
+}
+.flaticon-orthopedics:before {
+    content: "\f191";
+}
+.flaticon-retinal-scan:before {
+    content: "\f192";
+}
+.flaticon-call-1:before {
+    content: "\f193";
+}
+.flaticon-email-3:before {
+    content: "\f194";
+}
+.flaticon-skin-care:before {
+    content: "\f195";
+}
+.flaticon-deal:before {
+    content: "\f196";
+}
+.flaticon-broken-arm:before {
+    content: "\f197";
+}
+.flaticon-swab:before {
+    content: "\f198";
+}
+.flaticon-laser-3:before {
+    content: "\f199";
+}
+.flaticon-injury:before {
+    content: "\f19a";
+}
+.flaticon-dermatologically-tested:before {
+    content: "\f19b";
+}
+.flaticon-user-avatar:before {
+    content: "\f19c";
+}
+.flaticon-institute:before {
+    content: "\f19d";
+}
+.flaticon-up-arrow-1:before {
+    content: "\f19e";
+}
+.flaticon-retinal-scan-1:before {
+    content: "\f19f";
+}
+.flaticon-quality-control:before {
+    content: "\f1a0";
+}
+.flaticon-face:before {
+    content: "\f1a1";
+}
+.flaticon-biometric-recognition:before {
+    content: "\f1a2";
+}
+.flaticon-cornea:before {
+    content: "\f1a3";
+}
+.flaticon-chiropractic:before {
+    content: "\f1a4";
+}
+.flaticon-tooth-whitening:before {
+    content: "\f1a5";
+}
+.flaticon-human-brain:before {
+    content: "\f1a6";
+}
+.flaticon-professional-1:before {
+    content: "\f1a7";
+}

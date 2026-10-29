@@ -1,0 +1,147 @@
+.leadership-section {
+  position: relative;
+}
+
+.leadership-section__head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .leadership-section__head {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: end;
+  }
+}
+
+.leadership-section__lead {
+  margin: 0;
+  color: var(--pub-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.leadership-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.leadership-profile-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.leadership-profile-card {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+  padding: 1.5rem;
+  border-radius: 1.35rem;
+  background: var(--pub-cream);
+  border: 1px solid var(--pub-line);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.leadership-profile-card:hover {
+  border-color: color-mix(in srgb, var(--pub-copper) 38%, var(--pub-line));
+  box-shadow: 0 18px 42px rgba(79, 70, 229, 0.08);
+}
+
+.leadership-profile-card__photo {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  aspect-ratio: 4 / 4.3;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #e0e7ff 0%, #c7d2fe 100%);
+  border: 1px solid var(--pub-line);
+}
+
+.leadership-profile-card__photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.leadership-profile-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0.35rem 0.25rem;
+}
+
+.leadership-profile-card__role {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 0.65rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--pub-peach);
+  color: var(--pub-copper);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.leadership-profile-card__name {
+  margin: 0 0 0.75rem;
+  color: var(--pub-ink);
+  font-family: var(--cm-font-display), "Plus Jakarta Sans", "Outfit", sans-serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.leadership-profile-card__bio {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--pub-muted);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.leadership-profile-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.35rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pub-line);
+  color: var(--pub-ink);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.leadership-profile-card__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.leadership-profile-card__meta i {
+  color: var(--pub-copper);
+  font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+  .leadership-profile-card {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    padding: 1.15rem;
+  }
+
+  .leadership-profile-card__photo {
+    max-width: 240px;
+    min-height: 220px;
+  }
+}

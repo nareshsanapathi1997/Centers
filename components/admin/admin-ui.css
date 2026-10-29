@@ -1,0 +1,267 @@
+/* Toasts and confirmation dialogs — see AdminUIProvider.tsx */
+
+.admin-toasts {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: min(24rem, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.admin-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-left-width: 4px;
+  border-radius: 0.625rem;
+  background: #ffffff;
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.06);
+  pointer-events: auto;
+  animation: admin-toast-in 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark .admin-toast {
+  border-color: #374151;
+  background: #1f2937;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.admin-toast--success {
+  border-left-color: #16a34a;
+}
+.admin-toast--error {
+  border-left-color: #dc2626;
+}
+.admin-toast--warning {
+  border-left-color: #d97706;
+}
+.admin-toast--info {
+  border-left-color: #4f46e5;
+}
+
+.admin-toast__icon {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.0625rem;
+}
+
+.admin-toast--success .admin-toast__icon {
+  color: #16a34a;
+}
+.admin-toast--error .admin-toast__icon {
+  color: #dc2626;
+}
+.admin-toast--warning .admin-toast__icon {
+  color: #d97706;
+}
+.admin-toast--info .admin-toast__icon {
+  color: #4f46e5;
+}
+
+.admin-toast__message {
+  flex: 1;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #1f2937;
+  /* Server error strings can be long and unbroken. */
+  overflow-wrap: anywhere;
+}
+
+.dark .admin-toast__message {
+  color: #e5e7eb;
+}
+
+.admin-toast__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  padding: 0.125rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.admin-toast__close:hover {
+  color: #4b5563;
+  background: #f3f4f6;
+}
+
+.dark .admin-toast__close:hover {
+  color: #e5e7eb;
+  background: #374151;
+}
+
+.admin-toast__close svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
+@keyframes admin-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(0.75rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Confirmation dialog */
+
+.admin-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  /* Above modals: a confirm is usually raised from inside one. */
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.dark .admin-confirm-overlay {
+  background: rgba(0, 0, 0, 0.66);
+}
+
+.admin-confirm {
+  width: 100%;
+  max-width: 26rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+  animation: admin-confirm-in 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark .admin-confirm {
+  border-color: #374151;
+  background: #111827;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.admin-confirm__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .admin-confirm__title {
+  color: #f9fafb;
+}
+
+.admin-confirm__message {
+  margin: 0 0 1.375rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #4b5563;
+  overflow-wrap: anywhere;
+}
+
+.dark .admin-confirm__message {
+  color: #d1d5db;
+}
+
+.admin-confirm__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 479px) {
+  .admin-confirm__actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .admin-confirm__actions .admin-confirm__btn,
+  .admin-confirm__actions .admin-btn {
+    width: 100%;
+  }
+}
+
+.admin-confirm__btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.admin-confirm__btn:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.admin-confirm__btn--cancel {
+  border-color: #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
+.admin-confirm__btn--cancel:hover {
+  background: #f9fafb;
+}
+
+.dark .admin-confirm__btn--cancel {
+  border-color: #4b5563;
+  background: transparent;
+  color: #e5e7eb;
+}
+
+.dark .admin-confirm__btn--cancel:hover {
+  background: #374151;
+}
+
+.admin-confirm__btn--primary {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.admin-confirm__btn--primary:hover {
+  background: #1d4ed8;
+}
+
+.admin-confirm__btn--danger {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.admin-confirm__btn--danger:hover {
+  background: #b91c1c;
+}
+
+@keyframes admin-confirm-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-toast,
+  .admin-confirm {
+    animation: none;
+  }
+}

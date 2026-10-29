@@ -1,0 +1,21 @@
+/* Next Chapter related stories. */
+.page-wrapper[data-cm-public='true'] .news-details-wrap__container{width:min(calc(100% - 80px),1280px);margin:auto}
+.page-wrapper[data-cm-public='true'] .news-details-wrap .row{align-items:flex-start}
+.page-wrapper[data-cm-public='true'] .nd-sidebar{width:100%;position:sticky;top:140px}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__wrap{padding:24px;background:var(--p-surface);border:1px solid var(--p-border);border-radius:12px}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__panel{padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid var(--p-border)}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__panel:last-child{margin-bottom:0;padding-bottom:0;border:0}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__title{margin:0 0 16px;font-size:20px;color:var(--p-ink)}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__title span{color:inherit;font:inherit}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__ticker-wrap{width:100%;overflow:hidden}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__ticker-box,.page-wrapper[data-cm-public='true'] .nd-sidebar__marquee{height:278px;overflow:hidden;position:relative}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__list{list-style:none!important;margin:0!important;padding:0!important}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__list li{border-bottom:1px solid var(--p-border)}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__list a{display:block;position:relative;padding:16px 8px 16px 36px;line-height:1.65;color:var(--p-ink);font-size:14px;text-decoration:none;overflow-wrap:anywhere}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__list a:hover{color:var(--p-primary)}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__list a i{position:absolute;left:0;top:18px;color:var(--p-primary);font-size:18px}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__empty{font-size:14px;color:var(--p-muted);padding:12px 0}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__marquee .marquee-inner{height:auto!important;min-height:60px}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__marquee .marquee-inner>div{height:auto!important}
+.page-wrapper[data-cm-public='true'] .nd-sidebar__marquee:is(:hover,.page-wrapper[data-cm-public='true'] :focus-within) .marquee-inner>div{animation-play-state:paused!important}
+@media(max-width:991px){.page-wrapper[data-cm-public='true'] .nd-sidebar{position:static;margin-top:24px}.page-wrapper[data-cm-public='true'] .news-details-wrap__container{width:calc(100% - 36px)}}

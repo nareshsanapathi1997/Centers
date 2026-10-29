@@ -1,0 +1,1071 @@
+/*-------------------------------
+    Dark Theme  CSS
+-------------------------------*/
+.switch-theme-mode {
+  position: relative;
+  top: auto;
+  right: auto;
+  z-index: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.slider.round {
+  border-radius: 50%;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 35px;
+  width: 35px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px rgba(32, 32, 32, 0.2392156863);
+  background: white url("../img/night.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111828;
+  background-size: 17px;
+}
+
+input:checked + .slider {
+  background-color: transparent;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px transparent;
+}
+
+input:checked + .slider:before {
+  transform: translateX(0);
+  background: white url("../img/sunny.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+}
+
+/*---------------------------------
+    Color CSS For Elements 
+-----------------------------------*/
+.theme-light .navbar-brand .logo-dark {
+  display: none !important;
+}
+.theme-light .navbar-brand .logo-light {
+  display: block !important;
+}
+
+/* Light mode: home & inner pages — white nav bar + readable links (works with html.theme-light) */
+html.theme-light .header-wrap.style1 .header-bottom,
+html.theme-light .header-wrap.style2 .header-bottom {
+  background-color: #ffffff !important;
+}
+html.theme-light .header-wrap .header-bottom .navbar .navbar-nav .nav-item .nav-link {
+  color: #002856 !important;
+}
+html.theme-light .header-wrap .header-bottom .navbar .navbar-nav .nav-item .nav-link.active {
+  color: #5f60ee !important;
+}
+html.theme-light .header-wrap .header-bottom .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #5f60ee !important;
+}
+
+.theme-dark .dpt-100 {
+  padding-top: 100px;
+}
+.theme-dark .navbar-brand .logo-light {
+  display: none !important;
+}
+.theme-dark .navbar-brand .logo-dark {
+  display: block !important;
+}
+.theme-dark .td-cod,
+.theme-dark .bg-albastor,
+.theme-dark .header-wrap.sticky,
+.theme-dark .blog-wrap.style1::after,
+.theme-dark .hw-wrap.style3 .hw-content .content-feature-list li,
+.theme-dark .pricing-wrap.style1::after,
+.theme-dark .gallery-wrap.style1::after,
+.theme-dark .footer-wrap,
+.theme-dark .why-choose-wrap,
+.theme-dark #leadership,
+.theme-dark .hw-wrap,
+.theme-dark #department,
+.theme-dark .gallery-wrap,
+.theme-dark #gallery,
+.theme-dark .blog-wrap {
+  background-color: #191c22;
+}
+
+.theme-dark .about-wrap,
+.theme-dark #about {
+  background-color: #252932 !important;
+}
+
+.theme-dark .faq-wrap {
+  background-color: #252932 !important;
+}
+
+.theme-dark .service-wrap,
+.theme-dark #service {
+  background-color: #252932 !important;
+}
+
+.theme-dark .header-wrap.style1,
+.theme-dark .header-wrap.style2 {
+  background-color: #252932 !important;
+}
+
+.theme-dark .notifications-wrap {
+  background-color: #252932 !important;
+}
+
+/* Dark Theme - Top Navigation Menu */
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu:before {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li:after {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li a:hover {
+  color: #fff !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li .dropdown-menu {
+  background: #252932 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li .dropdown-menu .dropdown-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.theme-dark .header-wrap .header-top .header-top-left .top-nav-menu li .dropdown-menu .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.theme-dark .header-wrap.style1 .header-top, 
+.theme-dark .header-wrap.style2 .header-top {
+  background: #191c22 !important;
+}
+.theme-dark body,
+.theme-dark .testimonial-card.style4 .client-img .quote-icon,
+.theme-dark .bg-white {
+  background-color: #000 !important;
+}
+.theme-dark .td-aztech,
+.theme-dark .bg-prussian,
+.theme-dark .bg-vista-white,
+.theme-dark .pricing-table.style1,
+.theme-dark .header-wrap.style3,
+.theme-dark .blog-card,
+.theme-dark .pricing-table.style2::before,
+.theme-dark .pricing-table.style4,
+.theme-dark .pricing-table.style8,
+.theme-dark .gallery-card.style1 .gallery-img .gallery-info,
+.theme-dark .gallery-card .gallery-img .gallery-info,
+.theme-dark .testimonial-card.style1,
+.theme-dark .hw-wrap.style2 .hw-content,
+.theme-dark .hw-wrap.style2 .hw-tab-content .hw-box,
+.theme-dark .team-card.style2 .team-info,
+.theme-dark .service-card.style2:after,
+.theme-dark .testimonial-card,
+.theme-dark .team-card.style3,
+.theme-dark .service-card.style3,
+.theme-dark .promo-card.style1,
+.theme-dark .promo-card.style2,
+.theme-dark .service-card.style8,
+.theme-dark .appointment-wrap.style3 .book-appointment,
+.theme-dark .team-card.style8 .team-info,
+.theme-dark .blog-card.style3 .blog-img .blog-date,
+.theme-dark .blog-card.style4 .blog-info .blog-date,
+.theme-dark .service-card.style4 .service-info,
+.theme-dark .service-card.style6:after,
+.theme-dark .category-box ul li a,
+.theme-dark .wp-block-quote,
+.theme-dark .team-card.style3 .social-profile li a,
+.theme-dark .gallery-card.style3 .gallery-info,
+.theme-dark .service-card.style1 .service-info span,
+.theme-dark .blog-card .blog-info,
+.theme-dark .course-card.style1 {
+  background-color: #111828 !important;
+}
+.theme-dark .service-card.style4 .service-info .service-title .service-icon,
+.theme-dark .pricing-table.style2 .pricing-header-wrap .pricing-icon,
+.theme-dark .pricing-table.style4 .pricing-header-wrap .pricing-icon {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .service-card.style4 .service-info .service-title .service-icon i,
+.theme-dark .pricing-table.style2 .pricing-header-wrap .pricing-icon i,
+.theme-dark .pricing-table.style4 .pricing-header-wrap .pricing-icon i {
+  color: #fff;
+}
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6,
+.theme-dark h3 a,
+.theme-dark .btn.style1:hover,
+.theme-dark .section-title h2 span,
+.theme-dark .content-title h2 span,
+.theme-dark article p strong,
+.theme-dark .service-desc p strong,
+.theme-dark .gallery-desc p strong,
+.theme-dark .course-card.style1 .course-info h3,
+.theme-dark .terms-wrap p strong,
+.theme-dark .service-card.style3 .service-icon i,
+.theme-dark .service-card.style1 .service-info span i,
+.theme-dark .about-wrap.style4 .about-tablist .nav-item .tab-link,
+.theme-dark .accordion-item .accordion-header .accordion-button,
+.theme-dark a {
+  color: #fff !important;
+}
+/* Dark theme h2 headings in all sections (excluding hero) */
+.theme-dark section:not(#hero) .section-title h2,
+.theme-dark section:not(#hero) .content-title h2,
+.theme-dark section:not(#hero) h2,
+.theme-dark .about-wrap:not(.hero-wrap) .section-title h2,
+.theme-dark .about-wrap:not(.hero-wrap) .content-title h2,
+.theme-dark .service-wrap .section-title h2,
+.theme-dark .service-wrap .content-title h2,
+.theme-dark .hw-wrap .section-title h2,
+.theme-dark .hw-wrap .content-title h2,
+.theme-dark .why-choose-wrap .section-title h2,
+.theme-dark .why-choose-wrap .content-title h2,
+.theme-dark .gallery-wrap .section-title h2,
+.theme-dark .gallery-wrap .content-title h2,
+.theme-dark .faq-wrap .section-title h2,
+.theme-dark .faq-wrap .content-title h2,
+.theme-dark .testimonial-wrap .section-title h2,
+.theme-dark .testimonial-wrap .content-title h2,
+.theme-dark .blog-wrap .section-title h2,
+.theme-dark .blog-wrap .content-title h2,
+.theme-dark .contact-wrap .section-title h2,
+.theme-dark .contact-wrap .content-title h2,
+.theme-dark .department-wrap .section-title h2,
+.theme-dark .department-wrap .content-title h2,
+.theme-dark .appointment-wrap .section-title h2,
+.theme-dark .appointment-wrap .content-title h2 {
+  color: #fff !important;
+}
+/* Dark theme styling for high-cus span */
+.theme-dark .hero-content span.high-cus {
+  background: rgba(95, 96, 238, 0.2);
+  border: 1px solid rgba(95, 96, 238, 0.4);
+  color: #fff !important;
+}
+.theme-dark p, .theme-dark span,
+.theme-dark .pricing-table .pricing-features li,
+.theme-dark .checkbox label,
+.theme-dark .form_group label,
+.theme-dark .content-feature-list li,
+.theme-dark .content-feature-list.style4 li,
+.theme-dark .accordion-item .accordion-header .accordion-button.collapsed span i,
+.theme-dark .login-form .login-body .form-group label {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.theme-dark h3:hover a,
+.theme-dark a:hover,
+.theme-dark .pricing-table.style2:hover .pricing-header-wrap .pricing-icon i, .theme-dark .pricing-table.style4:hover .pricing-header-wrap .pricing-icon i,
+.theme-dark .section-title span,
+.theme-dark .content-feature-list li i,
+.theme-dark .promo-video-wrap p span,
+.theme-dark .service-card.style3:hover .service-icon i,
+.theme-dark .hw-wrap.style2 .hw-tab-content .hw-box span,
+.theme-dark .header-wrap .header-bottom .navbar .navbar-nav .nav-item .nav-link.active,
+.theme-dark .hw-wrap.style3 .hw-content .content-feature-list li i,
+.theme-dark .service-card.style3 .service-info .content-feature-list li i,
+.theme-dark .content-title span {
+  color: #FF375F !important;
+}
+.theme-dark .team-card.style1 .social-profile li a:hover,
+.theme-dark .service-card.style1:hover .service-info span {
+  background-color: #FF375F !important;
+}
+.theme-dark .course-card-link:hover .course-card.style1 .course-info h3 {
+  color: #FF375F !important;
+}
+
+/* Course Card Name Dark Mode - Explicit override for all tabs */
+.theme-dark .course-card.style1 .course-info h3,
+.theme-dark .hw-wrap .course-card.style1 .course-info h3,
+.theme-dark .tab-pane .course-card.style1 .course-info h3,
+.theme-dark .hw-tab-content .course-card.style1 .course-info h3,
+.theme-dark .course-card-link .course-card.style1 .course-info h3 {
+  color: #fff !important;
+  background-color: rgb(45, 42, 92) !important;
+}
+
+/* Leadership Section Dark Mode */
+.theme-dark .leadership-message .quote-icon-top i,
+.theme-dark .leadership-message .quote-icon-bottom i {
+  color: #FF375F;
+  opacity: 0.4;
+}
+
+.theme-dark .director-profile .director-info h5 {
+  color: #fff !important;
+}
+
+.theme-dark .director-profile .director-info p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-dark .director-profile .director-img img {
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* About Center Director Dark Mode */
+.theme-dark .about-director-content .content-title span {
+  color: #FF375F !important;
+}
+
+.theme-dark .about-director-content .content-title h2 {
+  color: #fff !important;
+}
+
+.theme-dark .about-director-content .director-bio p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* About Center Director in FAQ Section Dark Mode */
+.theme-dark .about-director-content-faq {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .about-director-content-faq .content-title h2 {
+  color: #fff !important;
+}
+
+.theme-dark .about-director-content-faq .director-bio p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Our Centers Dark Mode */
+.theme-dark .center-card .center-info h3 {
+  color: #fff !important;
+}
+
+.theme-dark .center-card .center-name {
+  color: #FF375F !important;
+}
+
+.theme-dark .center-detail-item i {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-dark .center-detail-item .detail-content a {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content a:hover {
+  color: #FF375F !important;
+}
+
+.theme-dark .center-detail-item .detail-content .rating-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-dark .center-detail-item .detail-content .rating-value {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content .star-rating i {
+  color: #FFA500 !important;
+}
+
+/* Testimonial Avatar Dark Mode */
+.theme-dark .testimonial-card .client-info-area .client-info-wrap .client-avatar {
+  background-color: #5f60ee !important;
+}
+
+.theme-dark .testimonial-card .client-info-area .client-info-wrap .client-avatar .avatar-letter {
+  color: #fff !important;
+}
+
+/* Testimonial Student Name Dark Mode */
+.theme-dark .testimonial-card .client-info h3,
+.theme-dark .testimonial-card .client-info-area .client-info-wrap .client-info h3,
+.theme-dark .testimonial-card.style7 .client-info-wrap .client-info h3 {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content .phone-number {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content .phone-number:hover {
+  color: #FF375F !important;
+}
+
+.theme-dark .center-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.theme-dark .center-detail-item .live-location-link {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-dark .center-detail-item .live-location-link:hover {
+  background-color: #5f60ee !important;
+  color: #fff !important;
+  border-color: #5f60ee !important;
+}
+
+.theme-dark .center-detail-item .live-location-link:hover i {
+  color: #fff !important;
+}
+
+.theme-dark .center-detail-item .detail-content .view-rating-btn {
+  background-color: #28a745 !important;
+  color: #fff !important;
+  border-color: #28a745 !important;
+}
+
+.theme-dark .center-detail-item .detail-content .view-rating-btn:hover {
+  background-color: #218838 !important;
+  border-color: #1e7e34 !important;
+  color: #fff !important;
+}
+
+/* Results Section Dark Mode */
+.theme-dark .results-card .results-title h4 {
+  color: #fff !important;
+}
+.theme-dark .gallery-card.style5 .gallery-info,
+.theme-dark .select-lang .navbar-language .dropdown-menu.show {
+  background: #111828;
+}
+.theme-dark .cta-wrap.style2 .content-title h2,
+.theme-dark .cta-wrap.style2 .content-title h2 span {
+  color: #002856 !important;
+}
+.theme-dark .hero-wrap.style7 {
+  background-blend-mode: difference;
+}
+.theme-dark .hero-wrap.style6 .container .hero-shape-one,
+.theme-dark .hero-wrap.style6 .container .hero-shape-two,
+.theme-dark .hero-wrap.style6 .container .hero-shape-three,
+.theme-dark .hero-wrap.style6 .hero-shape-two,
+.theme-dark .hero-wrap.style6 .container .hero-shape-four {
+  opacity: 0.1;
+}
+.theme-dark .appointment-wrap.style3::before {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.theme-dark .header-wrap.style4 .header-top {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a {
+  background-color: rgb(255, 255, 255);
+}
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a i {
+  color: #FF375F;
+}
+.theme-dark .blog-card.style6 {
+  background-color: transparent !important;
+}
+.theme-dark .blog-card.style6 .blog-info {
+  background-color: transparent !important;
+}
+.theme-dark article,
+.theme-dark .post-meta-option,
+.theme-dark .post-author,
+.theme-dark .comment-box-wrap,
+.theme-dark .comment-item,
+.theme-dark #cmt-form,
+.theme-dark .gallery-info-widget .gallery-info-item-wrap .gallery-info-item,
+.theme-dark .department-wrap.style7 .dp-content .feature-item-wrap .feature-item,
+.theme-dark .accordion-item .accordion-header .accordion-button.collapsed,
+.theme-dark .pricing-table.style2 .pricing-header-wrap,
+.theme-dark .pricing-table.style4 .pricing-header-wrap {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.theme-dark .header-wrap.style3 .header-bottom .other-option .searchbtn,
+.theme-dark .feature-item-wrap.style2 .feature-item,
+.theme-dark .partner-wrap.style2,
+.theme-dark .department-wrap.style3 .dp-content .feature-item-wrap,
+.theme-dark .service-card.style1,
+.theme-dark .service-card.style6,
+.theme-dark .service-card.style5,
+.theme-dark .service-card.style2,
+.theme-dark .course-card.style1 {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #111828 !important;
+}
+.theme-dark .hero-wrap.style4 {
+  position: relative;
+  z-index: 1;
+}
+.theme-dark .hero-wrap.style4:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.79);
+  z-index: -1;
+}
+.theme-dark .service-card.style5 {
+  border-radius: 10px;
+}
+.theme-dark .appointment-wrap.style2 .book-appointment {
+  background-color: #000;
+}
+.theme-dark .appointment-wrap.style7 {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .appointment-wrap.style7 .book-appointment.style2 {
+  border: none;
+}
+.theme-dark .team-card.style1 .social-profile li a,
+.theme-dark .sidebar-widget,
+.theme-dark .btn.style4 {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .appointment-wrap.style4::after {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.theme-dark .header-wrap.style3 .header-bottom .other-option .searchbtn i {
+  color: #fff;
+}
+.theme-dark .promo-card .promo-icon {
+  background-color: #fff;
+}
+.theme-dark .hero-wrap.style1 .hero-slide-item::before, .theme-dark .hero-wrap.style2 .hero-slide-item::before, .theme-dark .hero-wrap.style4 .hero-slide-item::before {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.09) 85%);
+  z-index: -1;
+}
+.theme-dark .tag-list ul li a {
+  background-color: #111828;
+  color: #fff;
+}
+.theme-dark .tag-list ul li a:hover {
+  background: #FF375F !important;
+  border-color: transparent;
+  color: #fff !important;
+}
+.theme-dark .dp-tablist .nav-item .tab-link {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.theme-dark .dp-tablist .nav-item .tab-link i {
+  color: #fff;
+}
+.theme-dark .cta-wrap.style1::after {
+  background: rgba(0, 0, 0, 0.71);
+}
+.theme-dark .owl-carousel .owl-dots button.owl-dot span {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group input,
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group textarea,
+.theme-dark .book-appointment.style2,
+.theme-dark #cmt-form .comment-form .form-group input,
+.theme-dark #cmt-form .comment-form .form-group textarea,
+.theme-dark .search-box .form-group input,
+.theme-dark #contactForm .form-group input,
+.theme-dark .book-appointment.style2 form .form-group input,
+.theme-dark .book-appointment.style2 form .form-group textarea,
+.theme-dark #contactForm .form-group textarea {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background-color: transparent;
+}
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group input::-moz-placeholder, .theme-dark .appointment-wrap.style3 .book-appointment form .form-group textarea::-moz-placeholder, .theme-dark .book-appointment.style2::-moz-placeholder, .theme-dark #cmt-form .comment-form .form-group input::-moz-placeholder, .theme-dark #cmt-form .comment-form .form-group textarea::-moz-placeholder, .theme-dark .search-box .form-group input::-moz-placeholder, .theme-dark #contactForm .form-group input::-moz-placeholder, .theme-dark .book-appointment.style2 form .form-group input::-moz-placeholder, .theme-dark .book-appointment.style2 form .form-group textarea::-moz-placeholder, .theme-dark #contactForm .form-group textarea::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group input::placeholder,
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group textarea::placeholder,
+.theme-dark .book-appointment.style2::placeholder,
+.theme-dark #cmt-form .comment-form .form-group input::placeholder,
+.theme-dark #cmt-form .comment-form .form-group textarea::placeholder,
+.theme-dark .search-box .form-group input::placeholder,
+.theme-dark #contactForm .form-group input::placeholder,
+.theme-dark .book-appointment.style2 form .form-group input::placeholder,
+.theme-dark .book-appointment.style2 form .form-group textarea::placeholder,
+.theme-dark #contactForm .form-group textarea::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.theme-dark .appointment-wrap.style3 .book-appointment form .form-group select {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background-color: #111828;
+  background-image: url(../img/down-arrow-white.png);
+}
+.theme-dark .book-appointment.style1 {
+  background: #111828 !important;
+  border-radius: 16px;
+}
+.theme-dark .book-appointment.style1 .overlay {
+  display: none;
+}
+.theme-dark .book-appointment.style1 h5 {
+  color: #fff !important;
+}
+.theme-dark .book-appointment.style1 p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.theme-dark .book-appointment.style1 form .form-group input,
+.theme-dark .book-appointment.style1 form .form-group textarea,
+.theme-dark .book-appointment.style1 form .form-group select {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background-color: #111828 !important;
+  color: #fff !important;
+  border-radius: 16px;
+}
+.theme-dark .book-appointment.style1 form .form-group input::-moz-placeholder,
+.theme-dark .book-appointment.style1 form .form-group textarea::-moz-placeholder,
+.theme-dark .book-appointment.style1 form .form-group select::-moz-placeholder {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.theme-dark .book-appointment.style1 form .form-group input::placeholder,
+.theme-dark .book-appointment.style1 form .form-group textarea::placeholder,
+.theme-dark .book-appointment.style1 form .form-group select::placeholder {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.theme-dark .book-appointment.style1 form .form-group select {
+  background-color: #111828 !important;
+  color: #fff !important;
+  background-image: url(../img/down-arrow-white.png);
+}
+.theme-dark .book-appointment.style1 form .form-group input:focus,
+.theme-dark .book-appointment.style1 form .form-group textarea:focus,
+.theme-dark .book-appointment.style1 form .form-group select:focus {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  background-color: #111828 !important;
+  color: #fff !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+.theme-dark .book-appointment.style1 form button.btn {
+  color: #fff;
+}
+.theme-dark .book-appointment.style1 form button.btn:hover {
+  color: #fff !important;
+}
+.theme-dark .book-appointment.style1 form button.btn:hover:before,
+.theme-dark .book-appointment.style1 form button.btn:hover:after {
+  background-color: #5f60ee !important;
+}
+.theme-dark .book-appointment.style1 form .form-group select option {
+  color: #fff !important;
+  background-color: #111828 !important;
+}
+.theme-dark .book-appointment.style2 form .form-group select {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: url(../img/down-arrow-white.png);
+}
+.theme-dark .team-card.style1 {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .team-card.style1 .social-profile li a {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.theme-dark .team-card.style1 .social-profile li a i {
+  color: #fff;
+}
+.theme-dark .team-card.style1 .social-profile li a:hover {
+  background-color: #FF375F;
+}
+.theme-dark select option {
+  color: #000;
+}
+.theme-dark .select-field option,
+.theme-dark .appointment-wrap.style4 .book-appointment .form-group select option,
+.theme-dark .book-appointment.style2 form .form-group select option {
+  color: #fff;
+}
+.theme-dark .partner-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .partner-item img {
+  filter: brightness(0) invert(1);
+}
+.theme-dark .partner-item.style2 {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .partner-item.style2 img {
+  filter: brightness(0) invert(1);
+}
+.theme-dark .blog-card.style8,
+.theme-dark .blog-card.style8 .blog-info,
+.theme-dark .appointment-wrap.style4 .book-appointment .form-group select,
+.theme-dark .testimonial-slider-two .testimonial-card.style5 {
+  background-color: transparent !important;
+}
+.theme-dark .social-profile.style1 li a,
+.theme-dark .service-card.style8 .service-icon,
+.theme-dark .about-wrap.style5 .about-img-wrap .about-promo-text > span,
+.theme-dark .service-card.style5 .service-icon,
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a,
+.theme-dark .promo-card.style1 .promo-info .promo-icon,
+.theme-dark .service-card.style6 .service-icon,
+.theme-dark .content-feature-list.style3 li span,
+.theme-dark .content-feature-list.style4 li span {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .social-profile.style1 li a i,
+.theme-dark .service-card.style8 .service-icon i,
+.theme-dark .about-wrap.style5 .about-img-wrap .about-promo-text > span i,
+.theme-dark .service-card.style5 .service-icon i,
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a i,
+.theme-dark .promo-card.style1 .promo-info .promo-icon i,
+.theme-dark .service-card.style6 .service-icon i,
+.theme-dark .content-feature-list.style3 li span i,
+.theme-dark .content-feature-list.style4 li span i {
+  color: #fff;
+}
+.theme-dark .service-card.style6:hover .service-icon,
+.theme-dark .service-card.style8:hover .service-icon,
+.theme-dark .social-profile.style1 li a:hover,
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a:hover,
+.theme-dark .pricing-table.style2 .pricing-header-wrap .pricing-icon {
+  background-color: #FF375F;
+}
+.theme-dark .service-card.style6:hover .service-icon i,
+.theme-dark .service-card.style8:hover .service-icon i,
+.theme-dark .social-profile.style1 li a:hover i,
+.theme-dark .header-wrap.style4 .header-top .header-top-right .social-profile li a:hover i,
+.theme-dark .pricing-table.style2 .pricing-header-wrap .pricing-icon i {
+  color: #fff;
+}
+/* Dark theme styles for header-wrap.style1 and style2 social icons */
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a i,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a i {
+  color: #fff;
+}
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a:hover,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a:hover {
+  background: #5f60ee;
+  border-color: #5f60ee;
+}
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a:hover i,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a:hover i {
+  color: #fff;
+}
+
+/* Dark theme WhatsApp icon styling */
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a.whatsapp-link,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a.whatsapp-link {
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+}
+
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a.whatsapp-link i,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a.whatsapp-link i {
+  color: #fff !important;
+}
+
+.theme-dark .header-wrap.style1 .header-top .header-top-right .social-profile li a.whatsapp-link:hover,
+.theme-dark .header-wrap.style2 .header-top .header-top-right .social-profile li a.whatsapp-link:hover {
+  background: #20BA5A !important;
+}
+.theme-dark .appointment-wrap.style4 .book-appointment .form-group select option {
+  color: #000;
+}
+.theme-dark .service-card.style2 .service-icon,
+.theme-dark .service-card.style8 .service-icon,
+.theme-dark .feature-item-wrap .feature-item .feature-icon {
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.theme-dark .service-card.style2 .service-icon i,
+.theme-dark .service-card.style8 .service-icon i,
+.theme-dark .feature-item-wrap .feature-item .feature-icon i {
+  color: #fff;
+}
+
+@media only screen and (max-width: 575px) {
+  .theme-dark .partner-wrap.style2 {
+    border: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .theme-dark .hero-wrap.style1 .hero-slide-item::before, .theme-dark .hero-wrap.style2 .hero-slide-item::before {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 70%, rgba(0, 0, 0, 0.85) 100%);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .theme-dark .header-wrap.style1, .theme-dark .header-wrap.style2, .theme-dark .header-wrap.style4, .theme-dark .header-wrap.style7 {
+    background-color: #000;
+  }
+  .theme-dark .navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/*---------------------------------
+    Dark Theme - Latest News and Events Section
+-----------------------------------*/
+.theme-dark .news-events-container {
+  background: linear-gradient(to right bottom, #3b3480, #4a3f9a, #584ab4, #6655ce, #7460e8);
+}
+
+.theme-dark .news-events-title {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .marquee-item {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .marquee-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.theme-dark .marquee-item i {
+  color: #fff;
+}
+
+/*---------------------------------
+    Dark Theme - Notifications Section
+-----------------------------------*/
+.theme-dark .notifications-container {
+  background: #252932;
+}
+
+.theme-dark .notifications-title {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .notifications-title::before {
+  background: #5f60ee;
+}
+
+.theme-dark .notifications-item {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(95, 96, 238, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .notifications-item::before {
+  background: linear-gradient(90deg, transparent, rgba(95, 96, 238, 0.2), transparent);
+}
+
+.theme-dark .notifications-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(95, 96, 238, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.theme-dark .notifications-item i {
+  color: #5f60ee;
+}
+
+/*---------------------------------
+    Dark Theme - Marquee Cards Section
+-----------------------------------*/
+.theme-dark .marquee-cards-wrap {
+  background: #191c22;
+}
+
+.theme-dark .marquee-card-wrapper {
+  background: #252932;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .marquee-card-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .marquee-card-title {
+  color: #fff;
+}
+
+.theme-dark .marquee-card-title::before {
+  background: #5f60ee;
+}
+
+.theme-dark .marquee-item {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .marquee-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(95, 96, 238, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.theme-dark .marquee-item i {
+  color: #5f60ee;
+}
+
+.theme-dark .notifications-item {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(95, 96, 238, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .notifications-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(95, 96, 238, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.theme-dark .notifications-item i {
+  color: #5f60ee;
+}
+
+/* Hero Section - Watch Video Button - Keep text white on hover in dark mode */
+.theme-dark .hero-wrap.style1 .hero-slide-item .hero-content .hero-btn .watch-video:hover .play-text,
+.theme-dark .hero-wrap.style2 .hero-slide-item .hero-content .hero-btn .watch-video:hover .play-text,
+.theme-dark .hero-wrap.style4 .hero-slide-item .hero-content .hero-btn .watch-video:hover .play-text {
+  color: #fff !important;
+}
+
+/* Teems category page dark mode polish */
+.theme-dark .teems-empty-state-card,
+html[data-theme="dark"] .teems-empty-state-card,
+body.dark-theme .teems-empty-state-card {
+  background-color: #111828 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+.theme-dark .teems-empty-state-icon-wrap,
+html[data-theme="dark"] .teems-empty-state-icon-wrap,
+body.dark-theme .teems-empty-state-icon-wrap {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+.theme-dark .teems-empty-state-icon,
+html[data-theme="dark"] .teems-empty-state-icon,
+body.dark-theme .teems-empty-state-icon {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.theme-dark .teems-empty-state-card h4,
+html[data-theme="dark"] .teems-empty-state-card h4,
+body.dark-theme .teems-empty-state-card h4 {
+  color: #ffffff !important;
+}
+.theme-dark .teems-empty-state-text,
+html[data-theme="dark"] .teems-empty-state-text,
+body.dark-theme .teems-empty-state-text {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+.theme-dark .teems-promo-badge,
+html[data-theme="dark"] .teems-promo-badge,
+body.dark-theme .teems-promo-badge {
+  background: rgba(56, 189, 248, 0.2) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  color: #d8f4ff !important;
+}
+.theme-dark .teems-program-price-actual,
+html[data-theme="dark"] .teems-program-price-actual,
+body.dark-theme .teems-program-price-actual {
+  color: #f0a0a0 !important;
+}
+.theme-dark .teems-program-price-offer,
+html[data-theme="dark"] .teems-program-price-offer,
+body.dark-theme .teems-program-price-offer {
+  color: #93b4ff !important;
+}
+.theme-dark .teems-program-price-discount,
+html[data-theme="dark"] .teems-program-price-discount,
+body.dark-theme .teems-program-price-discount,
+.theme-dark .teems-program-price-meta,
+html[data-theme="dark"] .teems-program-price-meta,
+body.dark-theme .teems-program-price-meta {
+  color: #ff9a9c !important;
+}
+.theme-dark .teems-program-price-meta .teems-program-price-gst,
+html[data-theme="dark"] .teems-program-price-meta .teems-program-price-gst,
+body.dark-theme .teems-program-price-meta .teems-program-price-gst {
+  color: #7dcea0 !important;
+}
+.theme-dark .teems-program-type-badge,
+html[data-theme="dark"] .teems-program-type-badge,
+body.dark-theme .teems-program-type-badge {
+  background: #ffc107 !important;
+  color: #1a1a1a !important;
+}
+.theme-dark .teems-program-divider,
+html[data-theme="dark"] .teems-program-divider,
+body.dark-theme .teems-program-divider {
+  border-top-color: rgba(255, 255, 255, 0.15) !important;
+}
+.theme-dark .teems-program-card .teems-program-title,
+html[data-theme="dark"] .teems-program-card .teems-program-title,
+body.dark-theme .teems-program-card .teems-program-title {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+/*# sourceMappingURL=dark-theme.css.map */

@@ -1,0 +1,81 @@
+/* Remix Icon previews inside admin panels (requires remixicon.css loaded in AdminPanelStyles) */
+[data-admin-panel='true'] .admin-remix-icon,
+[data-admin-panel='true'] .admin-remix-icon::before {
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+[data-admin-panel='true'] .admin-remix-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+}
+
+[data-admin-panel='true'] .admin-remix-icon--lg {
+  font-size: 1.75rem;
+}
+
+[data-admin-panel='true'] .admin-icon-picker-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+}
+
+[data-admin-panel='true'] .admin-icon-picker-btn i {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+[data-admin-panel='true'] .admin-icon-preview-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #f9fafb;
+}
+
+.dark [data-admin-panel='true'] .admin-icon-preview-box {
+  border-color: #374151;
+  background: #111827;
+}
+
+[data-admin-panel='true'] .admin-icon-preview-box__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.dark [data-admin-panel='true'] .admin-icon-preview-box__icon {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}
+
+[data-admin-panel='true'] .admin-header-menu-table-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.dark [data-admin-panel='true'] .admin-header-menu-table-icon {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}

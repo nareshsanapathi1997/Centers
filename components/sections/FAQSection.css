@@ -1,0 +1,194 @@
+/* Center home — People Also Ask (scoped accordion fixes + styling) */
+.center-home-faq-accordion .accordion-button::after {
+  display: none !important;
+}
+
+.center-home-faq-accordion .accordion-item {
+  background: var(--p-surface, #ffffff);
+  border: 1px solid var(--p-border, #e2e8f0) !important;
+}
+
+.center-home-faq-accordion .accordion-collapse.collapsing {
+  overflow: hidden;
+  transition: height 0.36s ease-in-out;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  text-align: left !important;
+  padding: 0.7rem 1rem !important;
+  min-height: unset !important;
+  align-items: stretch !important;
+  background-color: #fff !important;
+  color: var(--p-ink, #0f172a) !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  transition: background-color 0.28s ease, color 0.28s ease;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger.collapsed {
+  background-color: #fff !important;
+  color: var(--p-ink, #0f172a) !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger:not(.collapsed) {
+  background-color: color-mix(in srgb, var(--p-primary, #4f46e5) 10%, var(--p-surface, #ffffff)) !important;
+  color: var(--p-ink, #0f172a) !important;
+  border-bottom: none !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger span.center-home-faq-trigger-inner {
+  position: static !important;
+  inset: auto !important;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) 1.5rem;
+  align-items: center;
+  column-gap: 0.5rem;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  min-width: unset !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger span.center-home-faq-q-text {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: var(--p-ink, #0f172a) !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger span.center-home-faq-toggle-cell {
+  position: relative !important;
+  inset: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.5rem !important;
+  min-width: 1.5rem !important;
+  height: 1.5rem !important;
+  flex-shrink: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  color: var(--bs-primary, #5f60ee) !important;
+  top: auto !important;
+  right: auto !important;
+  border-radius: 0 !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger i.center-home-faq-q-icon {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  display: inline-block !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: var(--bs-primary, #5f60ee) !important;
+  padding-top: 0;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger .center-home-faq-toggle-cell i {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger.collapsed .center-home-faq-toggle-cell .center-home-faq-toggle-plus {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger.collapsed .center-home-faq-toggle-cell .center-home-faq-toggle-minus {
+  display: inline-block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.85) !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger:not(.collapsed) .center-home-faq-toggle-cell .center-home-faq-toggle-plus {
+  display: inline-block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.85) !important;
+}
+
+.center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger:not(.collapsed) .center-home-faq-toggle-cell .center-home-faq-toggle-minus {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+}
+
+.center-home-faq-accordion .center-home-faq-answer {
+  background-color: color-mix(in srgb, var(--p-primary, #4f46e5) 6%, var(--p-surface, #ffffff));
+  border-top: 1px solid var(--p-border, #e2e8f0) !important;
+}
+
+.center-home-faq-accordion .center-home-faq-answer-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+html.theme-dark .center-home-faq-accordion .accordion-item,
+.dark-theme .center-home-faq-accordion .accordion-item {
+  background: #111827 !important;
+  border-color: rgba(226, 232, 240, 0.12) !important;
+}
+
+html.theme-dark .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger,
+html.theme-dark .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger.collapsed,
+.dark-theme .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger,
+.dark-theme .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger.collapsed {
+  background-color: #111827 !important;
+  color: #f1f5f9 !important;
+}
+
+html.theme-dark .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger:not(.collapsed),
+.dark-theme .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger:not(.collapsed) {
+  background-color: #1e293b !important;
+  color: #fff !important;
+}
+
+html.theme-dark .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger span.center-home-faq-q-text,
+.dark-theme .center-home-faq-accordion .accordion-item .accordion-header .accordion-button.center-home-faq-trigger span.center-home-faq-q-text {
+  color: #f1f5f9 !important;
+}
+
+html.theme-dark .center-home-faq-accordion .center-home-faq-answer,
+.dark-theme .center-home-faq-accordion .center-home-faq-answer {
+  background-color: #0b0f19 !important;
+  border-top-color: rgba(226, 232, 240, 0.12) !important;
+}
+
+html.theme-dark .center-home-faq-accordion .center-home-faq-answer-text,
+.dark-theme .center-home-faq-accordion .center-home-faq-answer-text {
+  color: #94a3b8 !important;
+}

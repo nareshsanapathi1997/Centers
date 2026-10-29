@@ -1,0 +1,9 @@
+import Link from 'next/link'
+import { ArrowLeft, ArrowUpRight, BookOpen, ClipboardCheck, GraduationCap } from 'lucide-react'
+interface StudentAuthShellProps { title: string; subtitle: string; brandTitle?: string; brandLead?: string; backHref: string; backLabel?: string; children: React.ReactNode }
+export default function StudentAuthShell({ title, subtitle, brandTitle = 'Make room for your next chapter.', brandLead = 'Your courses, practice, progress, and support. Together in one learning space.', backHref, backLabel = 'Back to home', children }: StudentAuthShellProps) {
+  return <div className="sp-entry">
+    <aside className="sp-entry__story"><Link href={backHref} className="sp-entry__brand"><GraduationCap aria-hidden="true" /><span>EduSphere<small>STUDENT WORKSPACE</small></span></Link><div className="sp-entry__message"><span className="sp-entry__kicker">A little progress. Every day.</span><h2>{brandTitle}</h2><p>{brandLead}</p><div className="sp-entry__symbol" aria-hidden="true">✳</div></div><div className="sp-entry__features"><div><BookOpen aria-hidden="true" /><span><strong>Your learning, organised.</strong><small>Courses, notes, and materials.</small></span></div><div><ClipboardCheck aria-hidden="true" /><span><strong>See how far you’ve come.</strong><small>Practice, assessments, and progress.</small></span></div></div></aside>
+    <main className="sp-entry__main"><Link href={backHref} className="sp-entry__back"><ArrowLeft aria-hidden="true" />{backLabel}</Link><div className="sp-entry__form"><div className="sp-entry__heading"><span className="sp-entry__kicker">Your learning continues here</span><h1>{title}</h1><p>{subtitle}</p></div>{children}</div><div className="sp-entry__foot"><span>EduSphere Student Portal</span><ArrowUpRight aria-hidden="true" /></div></main>
+  </div>
+}

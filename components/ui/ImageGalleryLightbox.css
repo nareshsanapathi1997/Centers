@@ -1,0 +1,161 @@
+.cm-gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  /* Lightly dim the page behind the preview so the website stays visible.
+     Kept on the container so no global button/theme reset can remove it. */
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+.cm-gallery-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cm-gallery-lightbox__figure {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: min(960px, 100%);
+  max-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.cm-gallery-lightbox__image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+
+.cm-gallery-lightbox__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.85rem;
+  padding: 0.4rem 1.1rem;
+  color: #fff;
+  text-align: center;
+  pointer-events: auto;
+  /* keep caption readable now that the page shows through the backdrop */
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+
+.cm-gallery-lightbox__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cm-gallery-lightbox__counter {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+.cm-gallery-lightbox__close,
+.cm-gallery-lightbox__nav {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cm-gallery-lightbox__close:hover,
+.cm-gallery-lightbox__nav:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.cm-gallery-lightbox__close {
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.cm-gallery-lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
+.cm-gallery-lightbox__nav:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.cm-gallery-lightbox__nav--prev {
+  left: 1rem;
+}
+
+.cm-gallery-lightbox__nav--next {
+  right: 1rem;
+}
+
+@media (max-width: 575px) {
+  .cm-gallery-lightbox {
+    padding: 0.75rem;
+  }
+
+  .cm-gallery-lightbox__close {
+    top: 0.65rem;
+    right: 0.65rem;
+  }
+
+  .cm-gallery-lightbox__nav {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .cm-gallery-lightbox__nav--prev {
+    left: 0.5rem;
+  }
+
+  .cm-gallery-lightbox__nav--next {
+    right: 0.5rem;
+  }
+}
+
+.gallery-img-preview-btn {
+  cursor: zoom-in;
+  display: block;
+}
+
+.gallery-img-preview-btn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}

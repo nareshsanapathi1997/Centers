@@ -1,0 +1,82 @@
+import { NextRequest, NextResponse } from 'next/server'
+import pool from '@/lib/db'
+
+import { requireAdminPermission, httpMethodToAction } from '@/lib/admin-access'
+import { logActivity } from '@/lib/activity-log'
+import { getAdminToken } from '@/lib/auth'
+
+export const dynamic = 'force-dynamic'
+
+export async function GET(request: NextRequest) {
+  try {
+    const searchParams = request.nextUrl.searchParams
+    const centerId = parseInt(searchParams.get('centerId') || '0')
+
+    if (!centerId) {
+      return NextResponse.json({ error: 'centerId is required' }, { status: 400 })
+    }
+
+    const token = getAdminToken(request)
+    if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+    const perm = await requireAdminPermission(token, centerId, 'testimonials', httpMethodToAction(request.method))
+    if (!perm.ok) return NextResponse.json({ error: perm.error }, { status: perm.status })
+    const result = await pool.query(
+      'SELECT * FROM text_testimonials WHERE center_id = $1 ORDER BY display_order',
+      [centerId]
+    )
+
+    return NextResponse.json(result.rows)
+  } catch (error) {
+    console.error('Error fetching text testimonials:', error)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const token = getAdminToken(request)
+    if (!token) {
+      return NextResponse.json({ error: 'No token provided' }, { status: 401 })
+    }
+
+    const body = await request.json()
+    const { center_id, quote, author_name, author_role, display_order, is_active } = body
+
+    if (!center_id) {
+      return NextResponse.json({ error: 'Center ID is required' }, { status: 400 })
+    }
+
+    const perm = await requireAdminPermission(token, parseInt(center_id), 'testimonials', httpMethodToAction(request.method))
+    if (!perm.ok) return NextResponse.json({ error: perm.error }, { status: perm.status })
+
+    const result = await pool.query(
+      `INSERT INTO text_testimonials (center_id, quote, author_name, author_role, display_order, is_active)
+       VALUES ($1, $2, $3, $4, $5, $6)
+       RETURNING *`,
+      [center_id, quote, author_name, author_role || null, display_order || 0, is_active !== false]
+    )
+
+    const newTestimonial = result.rows[0]
+
+    // Log activity
+    await logActivity(
+      {
+        user_type: 'admin',
+        user_id: perm.adminId,
+        center_id: parseInt(center_id),
+        action: 'create',
+        entity_type: 'testimonial_text',
+        entity_id: newTestimonial.id,
+        entity_name: author_name || 'Testimonial',
+      },
+      request
+    )
+
+    return NextResponse.json(newTestimonial)
+  } catch (error) {
+    console.error('Error creating text testimonial:', error)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+  }
+}
+

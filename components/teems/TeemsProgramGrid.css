@@ -1,0 +1,282 @@
+/* EduSphere Category / Course Listing Grid */
+.teems-program-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  align-items: stretch;
+}
+
+.teems-program-grid > .teems-program-grid-col {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+  display: flex;
+}
+
+.teems-program-card {
+  border-radius: 16px;
+  border: 1px solid var(--pub-line, #e2e8f0);
+  background: var(--pub-cream, #ffffff);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px -6px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teems-program-card:hover {
+  border-color: rgba(79, 70, 229, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.1);
+}
+
+html.dark .teems-program-card,
+html.theme-dark .teems-program-card,
+html[data-theme='dark'] .teems-program-card {
+  background: #111827;
+  border-color: #1e293b;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+html.dark .teems-program-card:hover,
+html.theme-dark .teems-program-card:hover,
+html[data-theme='dark'] .teems-program-card:hover {
+  border-color: rgba(129, 140, 248, 0.45);
+}
+
+.teems-program-card-image,
+.teems-program-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #eef2ff;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+html.dark .teems-program-card-image,
+html.theme-dark .teems-program-card-image,
+html[data-theme='dark'] .teems-program-card-image,
+html.dark .teems-program-card__media,
+html.theme-dark .teems-program-card__media,
+html[data-theme='dark'] .teems-program-card__media {
+  background: #1e293b;
+}
+
+.teems-program-card-image-placeholder,
+.teems-program-card__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pub-copper, #4f46e5);
+  font-size: 2rem;
+}
+
+.teems-program-type-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.84);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+}
+
+.teems-program-card-body,
+.teems-program-card__body {
+  padding: 1.3rem 1.35rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.teems-program-title,
+.teems-program-card__title {
+  font-family: var(--cm-font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.015em;
+  color: var(--pub-ink, #0f172a);
+}
+
+html.dark .teems-program-title,
+html.theme-dark .teems-program-title,
+html[data-theme='dark'] .teems-program-title {
+  color: #f8fafc;
+}
+
+.teems-program-promo-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.teems-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--pub-peach, #eef2ff);
+  color: var(--pub-copper, #4f46e5);
+}
+
+.teems-program-footer,
+.teems-program-card__foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.teems-program-divider {
+  border: 0;
+  border-top: 1px solid var(--pub-line, #e2e8f0);
+  margin: 0.65rem 0;
+}
+
+.teems-program-price-area {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.teems-program-price-offer,
+.teems-program-card__price-main {
+  font-family: var(--cm-font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--pub-ink, #0f172a);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+html.dark .teems-program-price-offer,
+html.theme-dark .teems-program-price-offer,
+html[data-theme='dark'] .teems-program-price-offer {
+  color: #f8fafc;
+}
+
+.teems-program-price-actual,
+.teems-program-card__price-strike {
+  font-size: 0.9rem;
+  color: var(--pub-muted, #64748b);
+  text-decoration: line-through;
+  font-variant-numeric: tabular-nums;
+}
+
+.teems-program-price-meta {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #059669;
+  margin-top: 0.2rem !important;
+}
+
+html.dark .teems-program-price-meta,
+html.theme-dark .teems-program-price-meta,
+html[data-theme='dark'] .teems-program-price-meta {
+  color: #34d399;
+}
+
+.teems-program-price-gst {
+  color: var(--pub-muted, #64748b);
+  font-weight: 500;
+}
+
+.teems-program-actions,
+.teems-program-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.teems-program-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.68rem 0.9rem;
+  border-radius: 10px;
+  font-family: var(--cm-font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.teems-program-btn-enroll {
+  background: #4f46e5;
+  color: #ffffff !important;
+  border: 1px solid #4f46e5;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.22);
+}
+
+.teems-program-btn-enroll:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.teems-program-btn-detail,
+.teems-program-btn-details {
+  border: 1px solid var(--pub-line, #cbd5e1);
+  color: var(--pub-ink, #0f172a) !important;
+  background: var(--pub-paper, #f8fafc);
+}
+
+html.dark .teems-program-btn-detail,
+html.theme-dark .teems-program-btn-detail,
+html[data-theme='dark'] .teems-program-btn-detail {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc !important;
+}
+
+.teems-program-btn-detail:hover,
+.teems-program-btn-details:hover {
+  border-color: #4f46e5;
+  color: #4f46e5 !important;
+  background: #eef2ff;
+}
+
+html.dark .teems-program-btn-detail:hover,
+html.theme-dark .teems-program-btn-detail:hover,
+html[data-theme='dark'] .teems-program-btn-detail:hover {
+  border-color: #818cf8;
+  color: #818cf8 !important;
+  background: rgba(99, 102, 241, 0.16);
+}
+
+/* Empty state card */
+.teems-empty-state-card {
+  border-radius: 16px;
+  border: 1px solid var(--pub-line, #e2e8f0);
+  background: var(--pub-cream, #ffffff);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.teems-empty-state-icon-wrap {
+  background: var(--pub-peach, #eef2ff);
+  color: var(--pub-copper, #4f46e5);
+}
