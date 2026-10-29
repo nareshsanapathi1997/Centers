@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import CenterImage from '@/components/ui/CenterImage'
+import '@/components/course/CentreFilter.css'
 import { withBasePathHref } from '@/lib/with-base-path'
 import {
   buildTeemsProgramDetailLink,
@@ -20,6 +21,17 @@ function str(v: unknown): string {
 }
 
 function TeemsProgramPricing({ course }: { course: Record<string, unknown> }) {
+  if (course.fees_vary) {
+    const k = encodeURIComponent(String(course.slug || course.id || ''))
+    return (
+      <div className="teems-program-price-vary">
+        <hr className="teems-program-divider" />
+        <p className="mb-1 fw-semibold"><i className="ri-map-pin-2-line" aria-hidden /> Fees vary by centre</p>
+        <Link href={`/courses/program/${k}#centres`} className="teems-program-compare-link">Compare centres <i className="ri-arrow-right-line" aria-hidden /></Link>
+        <hr className="teems-program-divider teems-program-divider-bottom" />
+      </div>
+    )
+  }
   const { originalPrice, discountedPrice, offerDetails } = resolveCoursePriceFields(course)
   const hasOriginal = hasValidCoursePrice(originalPrice)
   const hasDiscounted = hasValidCoursePrice(discountedPrice)
@@ -29,7 +41,7 @@ function TeemsProgramPricing({ course }: { course: Record<string, unknown> }) {
 
   if (!hasAnyPrice && !discountText) return null
 
-  const showGst = hasAnyPrice
+  const showGst = false
   const showMeta = Boolean(discountText || showGst)
 
   return (
@@ -54,10 +66,6 @@ function TeemsProgramPricing({ course }: { course: Record<string, unknown> }) {
       {showMeta ? (
         <p className="teems-program-price-meta mb-0">
           {discountText ? <span>{discountText}</span> : null}
-          {discountText && showGst ? <span> | </span> : null}
-          {showGst ? (
-            <span className="teems-program-price-gst">(Including GST)</span>
-          ) : null}
         </p>
       ) : null}
       {hasAnyPrice || showMeta ? (

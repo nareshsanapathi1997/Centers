@@ -32,8 +32,11 @@ function toDetails(error: z.ZodError): Record<string, string[]> {
 function firstMessage(error: z.ZodError): string {
   const issue = error.issues[0]
   if (!issue) return 'Invalid request'
+  // Our own messages are full sentences; show them as-is to the student.
+  if (/[.!?]$/.test(issue.message)) return issue.message
   const path = issue.path.join('.')
-  return path ? `${path}: ${issue.message}` : issue.message
+  const label = path ? path : ''
+  return label ? `${label}: ${issue.message}` : issue.message
 }
 
 export async function parseBody<T>(

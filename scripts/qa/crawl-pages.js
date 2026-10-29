@@ -154,3 +154,4 @@ async function crawlRole(browser, role, visitedPatterns, report) {
   for (const r of bad) console.log(`[${r.role}] ${r.url}  (${r.status})\n    ${r.problems.join('\n    ')}`);
   console.log(`\nNot reached (${missing.length}):\n  ${missing.join('\n  ')}`);
 })();
+

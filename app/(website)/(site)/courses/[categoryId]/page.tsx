@@ -1,4 +1,7 @@
 import { notFound } from 'next/navigation'
+import { cookies } from 'next/headers'
+import CentreFilterNav from '@/components/course/CentreFilterNav'
+import { applyBrandPrices, centreCounts, coursesForCentre, listActiveCentreOptions, resolveSelectedCentre } from '@/lib/centre-filter-db'
 import BackToTopButton from '@/components/BackToTopButton'
 import PageHero from '@/components/PageHero'
 import ContentPagesStyles from '@/components/ContentPagesStyles'
@@ -8,7 +11,7 @@ import { getWebsiteHomeBrandingCenter } from '@/lib/website-home-db'
 import { getWebsiteCategoryGroup } from '@/lib/website-catalog-courses'
 import { sortTeemsCoursesForDisplay } from '@/lib/teems-course-display'
 
-export const revalidate = 120
+export const dynamic = 'force-dynamic'
 
 export default async function WebsiteCategoryCoursesPage({
   params,
@@ -45,6 +48,15 @@ export default async function WebsiteCategoryCoursesPage({
     group.course_category_name
   )
 
+  const options = await listActiveCentreOptions()
+  const { counts, sets } = await centreCounts(options, coursesWithTypeName as Record<string, unknown>[])
+  const sel = resolveSelectedCentre(options, searchParams?.centre, cookies().get('cm_last_centre')?.value)
+  const selIdx = options.findIndex((o) => o.slug === sel)
+  const selOpt = selIdx >= 0 ? options[selIdx] : null
+  const shownCourses = selOpt
+    ? await coursesForCentre(coursesWithTypeName as Record<string, unknown>[], selOpt.id, sets[selIdx])
+    : await applyBrandPrices(coursesWithTypeName as Record<string, unknown>[], options, sets)
+
   const categoryNumericId = group.course_category_id
 
   return (
@@ -65,12 +77,19 @@ export default async function WebsiteCategoryCoursesPage({
         />
 
         <div className="container pt-4 pt-lg-5">
+          <CentreFilterNav
+            options={options.map((o) => ({ slug: o.slug, label: o.label, count: counts[o.slug] }))}
+            value={sel}
+            allCount={coursesWithTypeName.length}
+            summary={`${shownCourses.length} course${shownCourses.length === 1 ? '' : 's'}${selOpt ? ` at ${selOpt.label}` : ' across all centres'}`}
+          />
           <CategoryCoursesFilteredView
-            centerSlug={brandingCenter.slug}
-            brandLinks
+            key={sel || 'all'}
+            centerSlug={selOpt ? selOpt.slug : brandingCenter.slug}
+            brandLinks={!selOpt}
             categoryId={params.categoryId}
             sectionTitle={sectionTitle}
-            courses={coursesWithTypeName as Record<string, unknown>[]}
+            courses={shownCourses}
             typeRows={filters.typeRows}
             subTypesByTypeId={filters.subTypesByTypeId}
             typeNameByIdEntries={filters.typeNameByIdEntries}

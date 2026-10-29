@@ -95,6 +95,8 @@ export default function CategoryCoursesFilteredView({
   useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams()
+    const keepCentre = new URLSearchParams(window.location.search).get('centre')
+    if (keepCentre) params.set('centre', keepCentre)
     if (selectedType) params.set('type', selectedType)
     if (validSubTypeFilter && selectedSubType) params.set('subtype', selectedSubType)
     if (safePage > 1) params.set('page', String(safePage))

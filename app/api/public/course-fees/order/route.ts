@@ -13,16 +13,24 @@ export const dynamic = 'force-dynamic'
  * `installment_no` or a non-numeric `batch_id` previously reached the fee
  * resolver as NaN and produced a confusing 400 from deep inside the quote logic.
  */
-const OrderBody = z.object({
-  center_slug: z.string().trim().min(1, 'center_slug is required').max(120),
+/** Optional text the checkout may send as '', null or undefined. Empty -> undefined. */
+const optText = (max: number, msg: string, upper = false) =>
+  z.preprocess(
+    (v) => {
+      if (v == null) return undefined
+      const t = String(v).trim()
+      if (!t) return undefined
+      return upper ? t.toUpperCase() : t
+    },
+    z.string().max(max, msg).optional(),
+  )
+
+const OrderBody = z.object({  center_slug: z.string().trim().min(1, 'center_slug is required').max(120),
   course_key: z.union([z.string().trim().min(1), z.number()]),
   batch_id: z.coerce.number().int().positive().nullish(),
   student_name: z.string().trim().min(1, 'student_name is required').max(200),
   student_email: z
-    .string()
-    .trim()
-    .max(255)
-    .optional()
+    .preprocess((v) => (v == null ? undefined : String(v).trim()), z.string().max(255).optional())
     .transform((value) => value || undefined)
     .pipe(z.string().email('Enter a valid email address').optional()),
   student_mobile: z
@@ -32,11 +40,11 @@ const OrderBody = z.object({
     .refine((value) => value.replace(/\D/g, '').length >= 10, 'Enter a valid 10-digit mobile'),
   payment_type: z.enum(['lumpsum', 'installment']).default('lumpsum'),
   installment_no: z.coerce.number().int().positive().nullish(),
-  coupon_code: z.string().trim().max(60).optional(),
-  referral_code: z.string().trim().max(40).optional(),
-  form_data: z.record(z.string().max(80), z.union([z.string().max(500), z.number(), z.boolean()]).transform(String)).optional(),
-  terms_accepted: z.boolean().optional(),
-  idempotency_key: z.string().trim().max(200).optional(),
+  coupon_code: optText(60, 'That coupon code is too long. Check the code and try again.', true),
+  referral_code: optText(40, 'That referral code is too long. Check the code and try again.', true),
+  form_data: z.preprocess((v) => (v && typeof v === 'object' ? Object.fromEntries(Object.entries(v as Record<string, unknown>).filter(([, x]) => x != null && x !== '')) : undefined), z.record(z.string().max(80), z.union([z.string().max(500, 'One of the form answers is too long'), z.number(), z.boolean()]).transform(String)).optional()),
+  terms_accepted: z.preprocess((v) => (v == null ? undefined : v === true || v === 'true'), z.boolean().optional()),
+  idempotency_key: optText(200, 'Invalid request key'),
 })
 
 export async function POST(request: NextRequest) {

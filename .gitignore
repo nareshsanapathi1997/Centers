@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+envbkp.html
+*.env.bkp
+envbkp.*
 
 # Dependencies
 node_modules/

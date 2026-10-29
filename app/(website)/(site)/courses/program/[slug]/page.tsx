@@ -4,6 +4,8 @@ import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import BackToTopButton from '@/components/BackToTopButton'
 import BrandCentreLink from '@/components/course/BrandCentreLink'
+import BrandCentreFilterGrid from '@/components/course/BrandCentreFilterGrid'
+import { centreLabels } from '@/lib/centre-filter-db'
 import { getActiveCourseBySlug, listCentresOfferingCourse, type BrandCentreOffer } from '@/lib/brand-course-db'
 import {
   formatDetailDate,
@@ -17,7 +19,7 @@ import './BrandCoursePage.css'
 
 export const dynamic = 'force-dynamic'
 
-type Props = { params: { slug: string } }
+type Props = { params: { slug: string }; searchParams?: Record<string, string | string[] | undefined> }
 
 function plain(html: string | null | undefined, max = 160): string {
   const t = String(html || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
@@ -50,7 +52,7 @@ function CentreCard({ o, courseKey, last }: { o: BrandCentreOffer; courseKey: st
   const pay = `/${o.slug}/payment/${encodeURIComponent(courseKey)}`
   const p = o.price
   return (
-    <li className={`bcp-centre${last ? ' bcp-centre--last' : ''}`}>
+    <div className={`bcp-centre${last ? ' bcp-centre--last' : ''}`}>
       <div className="bcp-centre__head">
         <div>
           {last ? <span className="bcp-chip bcp-chip--accent"><i className="ri-history-line" aria-hidden /> Your last centre</span> : null}
@@ -104,11 +106,11 @@ function CentreCard({ o, courseKey, last }: { o: BrandCentreOffer; courseKey: st
           {o.allFull ? 'Join waitlist' : 'Enroll'} <i className="ri-arrow-right-line" aria-hidden />
         </BrandCentreLink>
       </div>
-    </li>
+    </div>
   )
 }
 
-export default async function BrandCoursePage({ params }: Props) {
+export default async function BrandCoursePage({ params, searchParams }: Props) {
   const key = decodeURIComponent(params.slug).trim()
   if (!key) notFound()
   const course = (await getActiveCourseBySlug(key)) as CourseDetailRecord | null
@@ -120,8 +122,14 @@ export default async function BrandCoursePage({ params }: Props) {
   const lastIdx = offers.findIndex((o) => o.slug === lastSlug)
   const ordered = lastIdx > 0 ? [offers[lastIdx], ...offers.filter((_, i) => i !== lastIdx)] : offers
 
+ const labels = centreLabels(ordered.map((o) => o.name))
+  const rawCentre = searchParams?.centre
+  const qCentre = (Array.isArray(rawCentre) ? rawCentre[0] : rawCentre) || ''
+  const initialCentre = qCentre === 'all' ? '' : qCentre || lastSlug
+
   const prices = offers.map((o) => o.price?.final).filter((n): n is number => typeof n === 'number' && n > 0)
-  const minPrice = prices.length ? Math.min(...prices) : null
+  const samePrice = prices.length > 0 && prices.length === offers.length && prices.every((n) => n === prices[0])
+  const minPrice = samePrice ? prices[0] : null
   const highlights = [...parseStringList(course.highlights), ...parseStringList(course.features)].slice(0, 6)
   const modeLabel = formatModeLabel(course.mode)
   const summary = plain(course.short_description || course.detailed_description, 320)
@@ -157,7 +165,7 @@ export default async function BrandCoursePage({ params }: Props) {
                   {course.duration ? <span><i className="ri-time-line" aria-hidden /> {course.duration}</span> : null}
                   {modeLabel ? <span><i className="ri-macbook-line" aria-hidden /> {modeLabel}</span> : null}
                   <span><i className="ri-map-pin-line" aria-hidden /> {offers.length} {offers.length === 1 ? 'centre' : 'centres'}</span>
-                  {minPrice != null ? <span><i className="ri-price-tag-3-line" aria-hidden /> From {formatInr(minPrice)}</span> : null}
+                  {minPrice != null ? <span><i className="ri-price-tag-3-line" aria-hidden /> {formatInr(minPrice)}</span> : offers.length > 1 ? <span><i className="ri-price-tag-3-line" aria-hidden /> Fees vary by centre</span> : null}
                 </div>
                 <a href="#centres" className="bcp-btn bcp-btn--primary bcp-hero__cta">Choose your centre <i className="ri-arrow-down-line" aria-hidden /></a>
               </div>
@@ -187,11 +195,14 @@ export default async function BrandCoursePage({ params }: Props) {
               <p>Fees, batches and seats differ by centre. Pick the one you will attend.</p>
             </div>
             {ordered.length ? (
-              <ul className="bcp-centre-grid">
-                {ordered.map((o) => (
-                  <CentreCard key={o.slug} o={o} courseKey={courseKey} last={o.slug === lastSlug} />
-                ))}
-              </ul>
+              <BrandCentreFilterGrid
+                initial={initialCentre}
+                items={ordered.map((o, i) => ({
+                  slug: o.slug,
+                  label: labels[i],
+                  node: <CentreCard o={o} courseKey={courseKey} last={o.slug === lastSlug} />,
+                }))}
+              />
             ) : (
               <div className="bcp-empty">
                 <i className="ri-map-pin-off-line" aria-hidden />
